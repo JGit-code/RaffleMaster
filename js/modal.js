@@ -96,6 +96,13 @@ document.addEventListener('DOMContentLoaded', () => {
         // Remove active class from all buttons
         ticketBtns.forEach(btn => btn.classList.remove('active'));
         
+        // Check if any button matches this value and activate it
+        ticketBtns.forEach(btn => {
+          if (parseInt(btn.dataset.quantity) === value) {
+            btn.classList.add('active');
+          }
+        });
+
         // Update total
         updateTotal();
       }
@@ -105,17 +112,23 @@ document.addEventListener('DOMContentLoaded', () => {
   // Handle add to cart button
   if (addToCartBtn) {
     addToCartBtn.addEventListener('click', () => {
-      // Get current raffle information
-      const raffleName = document.querySelector('h1')?.textContent || 'Raffle Item';
-      
-      // Add to cart (in this case, just update cart count and store in localStorage)
+      // Get current product information from the window object
+      // This will be set by product-modal.js
+      const productInfo = window.currentModalProduct || {
+        id: 'unknown',
+        name: 'Raffle Item',
+        price: ticketPrice
+      };
+
+      // Add to cart (store in localStorage)
       let cart = JSON.parse(localStorage.getItem('raffle-cart') || '[]');
       
       cart.push({
-        name: raffleName,
+        id: productInfo.id,
+        name: productInfo.name,
         quantity: selectedQuantity,
-        price: ticketPrice,
-        total: selectedQuantity * ticketPrice,
+        price: productInfo.price,
+        total: selectedQuantity * productInfo.price,
         date: new Date().toISOString()
       });
       
@@ -131,6 +144,11 @@ document.addEventListener('DOMContentLoaded', () => {
       addToCartBtn.textContent = 'Added to Cart!';
       addToCartBtn.classList.add('success');
       
+      // Add confetti celebration if available
+      if (typeof celebrate === 'function') {
+        celebrate();
+      }
+
       // Reset button after delay
       setTimeout(() => {
         addToCartBtn.textContent = 'Add to Cart';
@@ -139,4 +157,18 @@ document.addEventListener('DOMContentLoaded', () => {
       }, 1500);
     });
   }
+
+  // Public method to set the product price from outside
+  window.setTicketPrice = function(price) {
+    if (price && !isNaN(price)) {
+      ticketPrice = price;
+      updateTotal();
+    }
+  };
+
+  // Store the current modal product for cart reference
+  window.setCurrentModalProduct = function(product) {
+    window.currentModalProduct = product;
+  };
 });
+
