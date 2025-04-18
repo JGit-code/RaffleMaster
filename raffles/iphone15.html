@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone 15 Pro Raffle - Dream Raffles</title>
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/components/header.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/modal.css">
+    <link rel="stylesheet" href="/css/components/animation.css">
+</head>
+<body>
+    <!-- Header component -->
+    <header class="site-header">
+        <div class="logo">
+            <a href="/">Dream Raffles</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/winners.html">Winners</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/cart.html" class="cart-link">Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Raffle Details Section -->
+        <section class="raffle-details">
+            <div class="raffle-grid">
+                <div class="raffle-image">
+                    <img src="/assets/images/iphone15.jpg" alt="iPhone 15 Pro" class="featured-image">
+                    <!-- Thumbnail gallery -->
+                    <div class="thumbnail-gallery">
+                        <img src="/assets/images/iphone15.jpg" alt="iPhone 15 Pro - Front" class="thumbnail active">
+                        <img src="/assets/images/iphone15.jpg" alt="iPhone 15 Pro - Back" class="thumbnail">
+                        <img src="/assets/images/iphone15.jpg" alt="iPhone 15 Pro - Side" class="thumbnail">
+                    </div>
+                </div>
+                <div class="raffle-info">
+                    <h1>iPhone 15 Pro - 256GB</h1>
+                    <div class="raffle-meta">
+                        <span class="ticket-price">£5 per ticket</span>
+                        <span class="tickets-remaining">487 tickets remaining</span>
+                    </div>
+                    
+                    <div class="countdown-container">
+                        <h3>Draw closes in:</h3>
+                        <div id="iphone-countdown" class="countdown-timer" data-end-time="2025-04-20T20:00:00Z"></div>
+                    </div>
+                    
+                    <div class="raffle-description">
+                        <h3>Prize Details</h3>
+                        <p>Win a brand new iPhone 15 Pro with 256GB storage in Titanium finish. This is the latest flagship from Apple featuring:</p>
+                        <ul>
+                            <li>A17 Pro chip</li>
+                            <li>Pro camera system with 48MP main camera</li>
+                            <li>Super Retina XDR display with ProMotion</li>
+                            <li>All-day battery life</li>
+                            <li>Ceramic Shield front</li>
+                        </ul>
+                        <p>The winner will receive a sealed, brand new device with full warranty.</p>
+                    </div>
+                    
+                    <button class="cta-button buy-ticket-btn">Buy Tickets Now</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- How It Works Mini Section -->
+        <section class="how-it-works-mini">
+            <h2>How This Raffle Works</h2>
+            <div class="steps-grid">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Buy Your Tickets</h3>
+                    <p>Choose how many tickets you want to purchase for this raffle.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Receive Confirmation</h3>
+                    <p>Get your tickets by email with your unique ticket numbers.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Live Draw</h3>
+                    <p>We'll conduct a live draw when the timer ends or all tickets sell out.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Collect Your Prize</h3>
+                    <p>If you win, we'll contact you to arrange delivery of your iPhone 15 Pro!</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Similar Raffles -->
+        <section class="similar-raffles">
+            <h2>You Might Also Like</h2>
+            <div class="raffle-grid">
+                <div class="prize-card tilt">
+                    <img src="/assets/images/macbook.jpg" alt="MacBook Pro">
+                    <h3>MacBook Pro 16"</h3>
+                    <p class="price">£10 per ticket</p>
+                    <div class="countdown-timer" data-end-time="2025-05-15T18:00:00Z"></div>
+                    <a href="#" class="cta-button">Buy Ticket</a>
+                </div>
+                
+                <!-- More similar raffles can be added here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer component -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Dream Raffles</h4>
+                <p>Making dreams come true, one raffle at a time.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/winners.html">Winners</a></li>
+                    <li><a href="/how-it-works.html">How It Works</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: support@dreamraffles.com</li>
+                    <li>Phone: 01234 567890</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Dream Raffles. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Ticket Modal (Hidden by default) -->
+    <div class="modal-container" id="ticket-modal">
+        <div class="modal">
+            <button class="modal-close">&times;</button>
+            <h2>Select Tickets for iPhone 15 Pro</h2>
+            <div class="ticket-selector">
+                <button class="ticket-btn" data-quantity="1">1</button>
+                <button class="ticket-btn" data-quantity="5">5</button>
+                <button class="ticket-btn" data-quantity="10">10</button>
+                <button class="ticket-btn" data-quantity="20">20</button>
+                <div class="custom-quantity">
+                    <label for="custom-ticket-amount">Custom:</label>
+                    <input type="number" id="custom-ticket-amount" min="1" max="100" value="1">
+                </div>
+            </div>
+            <div class="ticket-summary">
+                <p>Total: <span class="ticket-total">£5</span></p>
+            </div>
+            <button class="cta-button add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/js/countdown.js"></script>
+    <script src="/js/modal.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize countdowns
+            const countdownElements = document.querySelectorAll('.countdown-timer');
+            countdownElements.forEach(element => {
+                const endTime = element.dataset.endTime || '2025-04-20T20:00:00Z';
+                startCountdown(element, endTime);
+            });
+            
+            // Set up the buy ticket button to open modal
+            const buyTicketBtn = document.querySelector('.buy-ticket-btn');
+            const modal = document.getElementById('ticket-modal');
+            
+            buyTicketBtn.addEventListener('click', function() {
+                modal.classList.add('open');
+            });
+            
+            // Thumbnail gallery behavior
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const featuredImage = document.querySelector('.featured-image');
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    // Remove active class from all thumbnails
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    // Add active class to clicked thumbnail
+                    this.classList.add('active');
+                    // Update featured image
+                    featuredImage.src = this.src;
+                    featuredImage.alt = this.alt;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+
+

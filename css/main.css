@@ -1,0 +1,277 @@
+/* ----- Base Styles ----- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--font-size-base);
+  line-height: 1.5;
+  color: var(--color-text);
+  background-color: var(--color-background);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-speed) var(--transition-easing);
+}
+
+a:hover {
+  color: var(--color-secondary);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+}
+
+p {
+  margin-bottom: var(--space-md);
+}
+
+/* ----- Layout ----- */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+main {
+  min-height: 100vh;
+  padding-top: var(--header-height);
+  padding-bottom: var(--space-3xl);
+}
+
+section {
+  margin-bottom: var(--space-3xl);
+  padding: var(--space-2xl) var(--space-lg);
+}
+
+/* Grid System */
+.raffle-grid,
+.trust-grid,
+.footer-grid,
+.steps-grid {
+  display: grid;
+  gap: var(--space-lg);
+}
+
+.raffle-grid {
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+
+.trust-grid {
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+
+.footer-grid {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.steps-grid {
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+
+/* Two column layout for raffle details */
+.raffle-details .raffle-grid {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ----- Utility Classes ----- */
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+.bg-surface {
+  background-color: var(--color-surface);
+}
+
+.mb-sm {
+  margin-bottom: var(--space-sm);
+}
+
+.mb-md {
+  margin-bottom: var(--space-md);
+}
+
+.mb-lg {
+  margin-bottom: var(--space-lg);
+}
+
+.p-md {
+  padding: var(--space-md);
+}
+
+.p-lg {
+  padding: var(--space-lg);
+}
+
+/* ----- CTA Button ----- */
+.cta-button {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  background-color: var(--color-primary);
+  color: var(--color-background);
+  font-weight: 700;
+  border-radius: var(--border-radius);
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-speed) var(--transition-easing);
+  text-align: center;
+}
+
+.cta-button:hover {
+  background-color: var(--color-secondary);
+  color: var(--color-background);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* ----- Responsive Adjustments ----- */
+@media (max-width: 768px) {
+  :root {
+    --font-size-4xl: 1.875rem;
+    --font-size-3xl: 1.5rem;
+    --font-size-2xl: 1.25rem;
+  }
+  
+  .raffle-details .raffle-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: var(--space-lg) var(--space-md);
+  }
+  
+  .raffle-grid,
+  .trust-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ----- Hero Banner ----- */
+.hero-banner {
+  position: relative;
+  height: 80vh;
+  min-height: 500px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-banner img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  filter: brightness(0.4);
+}
+
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: var(--space-xl);
+  max-width: 800px;
+}
+
+.hero-text h1 {
+  margin-bottom: var(--space-md);
+  color: var(--color-primary);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-text p {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-lg);
+}
+
+/* ----- Misc Sections ----- */
+.live-raffles h2,
+.trust-elements h2,
+.testimonials h2,
+.similar-raffles h2,
+.how-it-works-mini h2 {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.trust-item {
+  text-align: center;
+  padding: var(--space-lg);
+  background-color: var(--color-surface);
+  border-radius: var(--border-radius);
+  transition: transform var(--transition-speed) var(--transition-easing);
+}
+
+.trust-item:hover {
+  transform: translateY(-5px);
+}
+
+.trust-item img {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto var(--space-md);
+}
+
+/* Tilt animation */
+.tilt {
+  transition: transform var(--transition-speed);
+}
+
+.tilt:hover {
+  transform: perspective(800px) rotateY(5deg) rotateX(3deg);
+}

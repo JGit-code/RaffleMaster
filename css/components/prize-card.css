@@ -1,0 +1,182 @@
+/* Prize Card Component */
+.prize-card {
+  background: linear-gradient(145deg, var(--color-surface), rgba(var(--color-surface-rgb), 0.8));
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.5s var(--transition-easing),
+              box-shadow 0.5s var(--transition-easing);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.1);
+}
+
+.prize-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--color-primary), var(--color-secondary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.6s var(--transition-easing);
+}
+
+.prize-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 20px 30px -10px rgba(0, 0, 0, 0.3),
+              0 0 20px rgba(var(--color-primary-rgb), 0.2);
+}
+
+.prize-card:hover::before {
+  transform: scaleX(1);
+}
+
+.prize-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.6s var(--transition-easing);
+}
+
+.prize-card:hover img {
+  transform: scale(1.05);
+}
+
+.prize-card h3 {
+  padding: var(--space-md) var(--space-md) var(--space-xs);
+  font-size: var(--font-size-xl);
+  color: var(--color-primary);
+}
+
+.prize-card .price {
+  padding: 0 var(--space-md);
+  color: var(--color-secondary);
+  font-weight: 700;
+  margin-bottom: var(--space-xs);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.prize-card .price::before {
+  content: '•';
+  color: var(--color-primary);
+}
+
+.prize-card .countdown-timer {
+  padding: 0 var(--space-md);
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.prize-card .countdown-timer::before {
+  content: '⏱';
+  font-size: 14px;
+}
+
+.prize-card .cta-button {
+  margin: auto var(--space-md) var(--space-md);
+  position: relative;
+  overflow: hidden;
+}
+
+.prize-card .cta-button::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s var(--transition-easing);
+}
+
+.prize-card .cta-button:hover::after {
+  left: 100%;
+}
+
+/* Featured Card */
+.prize-card.featured {
+  transform: scale(1.05);
+  border: 1px solid rgba(var(--color-primary-rgb), 0.3);
+}
+
+.prize-card.featured::after {
+  content: 'Featured';
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--color-primary);
+  color: var(--color-background);
+  font-size: 0.7rem;
+  font-weight: bold;
+  padding: 4px 10px;
+  border-radius: 12px;
+  z-index: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.prize-card.featured h3 {
+  color: var(--color-primary);
+}
+
+/* Coming soon card styling */
+.prize-card.coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 350px;
+  background: linear-gradient(135deg, var(--color-surface), rgba(var(--color-secondary-rgb), 0.15));
+  text-align: center;
+  padding: var(--space-lg);
+  position: relative;
+  overflow: hidden;
+}
+
+.prize-card.coming-soon::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(var(--color-secondary-rgb), 0.05),
+    rgba(var(--color-secondary-rgb), 0.05) 10px,
+    rgba(var(--color-secondary-rgb), 0.1) 10px,
+    rgba(var(--color-secondary-rgb), 0.1) 20px
+  );
+  animation: moveBg 20s linear infinite;
+}
+
+@keyframes moveBg {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+.prize-card.coming-soon h3 {
+  padding: 0;
+  margin-bottom: var(--space-sm);
+  color: var(--color-secondary);
+  position: relative;
+  z-index: 1;
+}
+
+.prize-card.coming-soon p {
+  color: var(--color-text-muted);
+  position: relative;
+  z-index: 1;
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Raffles - Win Amazing Prizes</title>
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/components/header.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/prize-card.css">
+    <link rel="stylesheet" href="/css/components/modal.css">
+    <link rel="stylesheet" href="/css/components/animation.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="logo">
+            <a href="/">Dream Raffles</a>
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/winners.html">Winners</a></li>
+                <li><a href="/how-it-works.html">How It Works</a></li>
+                <li><a href="/cart.html" class="cart-link">Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-banner">
+            <div class="hero-overlay"></div>
+            <video class="hero-video" autoplay muted loop playsinline>
+                <source src="/assets/videos/tesla-driving.mp4" type="video/mp4">
+            </video>
+            <div class="hero-text fade-in">
+                <span class="hero-tag">Limited Time Offer</span>
+                <h1>Your Dream, <span class="accent-text shine-text">One Ticket Away</span></h1>
+                <p>Enter to win a Tesla Model S. Winner announced in:</p>
+                <div id="countdown-tesla" class="countdown-timer countdown-hero"></div>
+                <div class="hero-buttons">
+                    <a href="/raffles/tesla.html" class="cta-button pulse-animation">Enter Now</a>
+                    <a href="/how-it-works.html" class="text-button">How It Works <span class="arrow">→</span></a>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <section class="live-raffles">
+            <h2>Live Raffles</h2>
+            <div class="raffle-grid">
+                <div class="prize-card tilt">
+                    <img src="/assets/images/iphone15.jpg" alt="iPhone 15">
+                    <h3>iPhone 15 Pro</h3>
+                    <p class="price">£5 per ticket</p>
+                    <div class="countdown-timer" data-end-time="2025-04-20T20:00:00Z"></div>
+                    <a href="/raffles/iphone15.html" class="cta-button">Buy Ticket</a>
+                </div>
+                <div class="prize-card tilt">
+                    <img src="/assets/images/macbook.jpg" alt="MacBook Pro">
+                    <h3>MacBook Pro 16"</h3>
+                    <p class="price">£10 per ticket</p>
+                    <div class="countdown-timer" data-end-time="2025-05-15T18:00:00Z"></div>
+                    <a href="#" class="cta-button">Buy Ticket</a>
+                </div>
+                <div class="prize-card tilt coming-soon">
+                    <h3>Coming Soon</h3>
+                    <p>New prizes added weekly</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="trust-elements">
+            <h2>Why Choose Us</h2>
+            <div class="trust-grid">
+                <div class="trust-item">
+                    <img src="/assets/icons/security.svg" alt="Security Icon">
+                    <h3>Secure Checkout</h3>
+                    <p>All transactions are SSL encrypted.</p>
+                </div>
+                <div class="trust-item">
+                    <img src="/assets/icons/ticket.svg" alt="Fair Draw Icon">
+                    <h3>Fair Draws</h3>
+                    <p>Random winners selected by verified algorithm.</p>
+                </div>
+                <div class="trust-item">
+                    <img src="/assets/icons/trophy.svg" alt="Winners Icon">
+                    <h3>Real Winners</h3>
+                    <p>See our gallery of past winners and testimonials.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="testimonials">
+            <h2>Hear From Our Winners</h2>
+            <div class="testimonial-carousel">
+                <div class="testimonial-slide">
+                    <img src="/assets/images/winners/winner1.jpg" alt="John D.">
+                    <blockquote>
+                        "I never thought I'd actually win! The Tesla is amazing and the whole process was so smooth."
+                    </blockquote>
+                    <cite>— John D., London</cite>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Dream Raffles</h4>
+                <p>Making dreams come true, one raffle at a time.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/winners.html">Winners</a></li>
+                    <li><a href="/how-it-works.html">How It Works</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: support@dreamraffles.com</li>
+                    <li>Phone: 01234 567890</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Dream Raffles. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="modal-container" id="ticket-modal">
+        <div class="modal">
+            <button class="modal-close">&times;</button>
+            <h2>Select Tickets</h2>
+            <div class="ticket-selector">
+                <button class="ticket-btn" data-quantity="1">1</button>
+                <button class="ticket-btn" data-quantity="5">5</button>
+                <button class="ticket-btn" data-quantity="10">10</button>
+                <button class="ticket-btn" data-quantity="20">20</button>
+                <div class="custom-quantity">
+                    <label for="custom-ticket-amount">Custom:</label>
+                    <input type="number" id="custom-ticket-amount" min="1" max="100" value="1">
+                </div>
+            </div>
+            <div class="ticket-summary">
+                <p>Total: <span class="ticket-total">£5</span></p>
+            </div>
+            <button class="cta-button add-to-cart-btn">Add to Cart</button>
+        </div>
+    </div>
+
+    <script src="/js/countdown.js"></script>
+    <script src="/js/modal.js"></script>
+    <script src="/js/carousel.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const countdownElements = document.querySelectorAll('.countdown-timer');
+            countdownElements.forEach(element => {
+                const endTime = element.dataset.endTime || '2025-04-20T20:00:00Z';
+                startCountdown(element, endTime);
+            });
+
+            startCountdown(document.getElementById('countdown-tesla'), '2025-04-22T20:00:00Z');
+
+            initCarousel();
+        });
+    </script>
+</body>
+</html>
+
