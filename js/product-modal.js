@@ -25,9 +25,9 @@ const productData = {
       { icon: '🛡️', text: 'Ceramic Shield front' }
     ],
     images: [
-      '/assets/images/iphone15.jpg',
-      '/assets/images/iphone15-back.jpg', 
-      '/assets/images/iphone15-side.jpg'
+      'assets/images/iphone15.jpg',
+      'assets/images/iphone15.jpg', 
+      'assets/images/iphone15.jpg'
     ],
     additionalInfo: [
       { icon: '🎁', text: 'Free delivery worldwide' },
@@ -158,20 +158,16 @@ function openProductModal(productId) {
   
   if (!productModal || !productModalContent) return;
   
-  // Show loading state
-  productModalContent.innerHTML = `
-    <div class="product-modal-loading">
-      <div class="spinner"></div>
-      <span>Loading product details...</span>
-    </div>
-  `;
-  
-  // Open the modal
+  // Show modal and loading state
   productModal.classList.add('open');
-  // Prevent background scrolling
   document.body.style.overflow = 'hidden';
   
-  // Simulate loading (in a real app, this would be an API call)
+  // Dispatch event for product view tracking
+  document.dispatchEvent(new CustomEvent('productModalOpened', {
+    detail: { productId }
+  }));
+  
+  // Simulate loading delay
   setTimeout(() => {
     // Get product data
     const product = productData[productId];
