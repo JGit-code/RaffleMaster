@@ -183,18 +183,7 @@
 
 /* Mobile Menu Overlay */
 .menu-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #a1d6e2;
-  z-index: 1000;
-}
-
-.menu-overlay.active {
-  display: block;
+  display: none !important;
 }
 
 /* Mobile Navigation */
@@ -212,15 +201,14 @@
 
 .mobile-nav.active {
   display: block;
-  background-color: #a1d6e2; /* Baby blue background color */
-  width: 100%;
-  height: 100vh;
-  overflow-y: auto;
-  position: fixed;
+  background-color: #a1d6e2;
+  position: absolute;
   top: 60px;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: auto;
+  height: auto;
+  overflow: visible;
 }
 
 .mobile-nav ul {
@@ -277,14 +265,15 @@
 
 .mobile-nav .cart-link {
   margin-top: 1rem;
-  background-color: var(--color-primary);
+  background-color: #fff;
+  color: #333;
   border-radius: 8px;
   justify-content: center;
   gap: 0.5rem;
 }
 
 .mobile-nav .cart-link:hover {
-  background-color: var(--color-primary-dark);
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
