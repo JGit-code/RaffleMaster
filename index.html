@@ -11,79 +11,189 @@
     <link rel="stylesheet" href="/css/components/prize-card.css">
     <link rel="stylesheet" href="/css/components/modal.css">
     <link rel="stylesheet" href="/css/components/animation.css">
+    <link rel="stylesheet" href="/css/components/hero.css">
 </head>
 <body>
     <header class="site-header">
         <div class="logo">
-            <a href="/">Raffle Master</a>
+            <img src="assets/images/RaffleLogo.png" alt="Raffle Master Logo">
+            <a href="index.html">Raffle Master</a>
         </div>
-        <nav class="main-nav">
+        <nav class="desktop-nav">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/raffles/raffles.html">Raffles</a></li>
-                <li><a href="/winners.html">Winners</a></li>
-                <li><a href="/how-it-works.html">How It Works</a></li>
-                <li><a href="/cart.html" class="cart-link">Cart <span class="cart-count">0</span></a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="raffles/raffles.html" class="nav-link">Raffles</a></li>
+                <li><a href="winners.html" class="nav-link">Winners</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="cart.html" class="nav-link cart-link">Cart <span class="cart-count">0</span></a></li>
             </ul>
         </nav>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/raffles/raffles.html" class="nav-link">Raffles</a></li>
+                <li><a href="/winners.html" class="nav-link">Winners</a></li>
+                <li><a href="/how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="/cart.html" class="nav-link cart-link">Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+        <div class="menu-overlay"></div>
     </header>
 
     <main>
         <section class="hero-banner">
-            <div class="hero-overlay"></div>
-            <video class="hero-video" autoplay muted loop playsinline>
-                <source src="/assets/videos/tesla-driving.mp4" type="video/mp4">
-            </video>
-            <div class="hero-text fade-in">
-                <span class="hero-tag">Limited Time Offer</span>
-                <h1>Your Dream, <span class="accent-text shine-text">One Ticket Away</span></h1>
-                <p>Enter to win a Tesla Model S. Winner announced in:</p>
-                <div id="countdown-tesla" class="countdown-timer countdown-hero"></div>
-                <div class="hero-buttons">
-                    <a href="/raffles/tesla.html" class="cta-button pulse-animation">Enter Now</a>
-                    <a href="/how-it-works.html" class="text-button">How It Works <span class="arrow">→</span></a>
+            <div class="hero-slider">
+                <!-- Slide 1: Cars & Cash -->
+                <div class="hero-slide active" style="background-image: url('assets/images/mountain-road-background.jpg');">
+                    <div class="dream-car-tag">DREAM CAR</div>
+                    <div class="price-tag">
+                        <div class="price-tag-text">TICKETS FROM</div>
+                        <div class="price-tag-amount">R15<span>p</span></div>
+                    </div>
+                    <div class="cars-container">
+                        <img src="assets/images/red-sports-car.jpg" alt="Red Sports Car" class="hero-car sports-car">
+                        <img src="assets/images/red-audi.jpg" alt="Red Audi" class="hero-car audi-car">
+                        <img src="assets/images/cash-stack.png" alt="Cash Prize" class="cash-stack">
+                    </div>
+                    <div class="hero-content">
+                        <h1>Stand a chance to win a Polo!</h1>
+                        <p>This week only, £10,000 tax-free cash with 10 dream cars!</p>
+                        <a href="#" class="enter-btn">ENTER TO WIN »</a>
+                    </div>
+                </div>
+
+                <!-- Slide 2: iPhone 15 Pro -->
+                <div class="hero-slide" style="background-image: url('assets/images/tech-background.jpg');">
+                    <div class="prize-tag">TECH GIVEAWAY</div>
+                    <div class="price-tag">
+                        <div class="price-tag-text">TICKETS FROM</div>
+                        <div class="price-tag-amount">£10</div>
+                    </div>
+                    <div class="product-container iphone-container">
+                        <img src="assets/images/iphone15.jpg" alt="iPhone 15 Pro" class="hero-product iphone-product">
+                    </div>
+                    <div class="hero-content">
+                        <h1>WIN THE LATEST iPHONE 15 PRO!</h1>
+                        <p>Your chance to win Apple's flagship smartphone with incredible camera and performance!</p>
+                        <a href="#iphone15" class="enter-btn">ENTER TO WIN »</a>
+                    </div>
+                </div>
+
+                <!-- Slide 3: MacBook Pro -->
+                <div class="hero-slide" style="background-image: url('assets/images/desk-background.jpg');">
+                    <div class="prize-tag">PRO GEAR</div>
+                    <div class="price-tag">
+                        <div class="price-tag-text">TICKETS FROM</div>
+                        <div class="price-tag-amount">£20</div>
+                    </div>
+                    <div class="product-container macbook-container">
+                        <img src="assets/images/macbook-pro.jpg" alt="MacBook Pro" class="hero-product macbook-product">
+                    </div>
+                    <div class="hero-content">
+                        <h1>MACBOOK PRO GIVEAWAY!</h1>
+                        <p>Take your productivity to the next level with Apple's most powerful laptop!</p>
+                        <a href="#macbook" class="enter-btn">ENTER NOW »</a>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Holiday & Crypto -->
+                <div class="hero-slide" style="background-image: url('assets/images/holiday1.jpg');">
+                    <div class="prize-tag">DUAL PRIZE</div>
+                    <div class="price-tag">
+                        <div class="price-tag-text">TICKETS FROM</div>
+                        <div class="price-tag-amount">£15</div>
+                    </div>
+                    <div class="dual-container">
+                        <div class="crypto-icon">₿</div>
+                    </div>
+                    <div class="hero-content">
+                        <h1>LUXURY HOLIDAY + CRYPTO!</h1>
+                        <p>Win a dream vacation AND £5,000 in cryptocurrency of your choice!</p>
+                        <a href="#holiday-crypto" class="enter-btn">SPIN & WIN</a> »</a>
+                    </div>
                 </div>
             </div>
-            <div class="scroll-indicator">
-                <span>Scroll</span>
-                <div class="scroll-arrow"></div>
+            <!-- Slider Navigation -->
+            <div class="slider-nav">
+                <button class="slider-prev">❮</button>
+                <div class="slider-dots"></div>
+                <button class="slider-next">❯</button>
+            </div>
+        </section>
+
+        <section class="explore-section">
+            <h2>EXPLORE OUR COMPETITIONS</h2>
+            <div class="stats-container">
+                <div class="stats-item">
+                    <div class="stats-icon">🏆</div>
+                    <div class="stats-content">
+                        <div class="stats-title">Over 9.68 million</div>
+                        <div class="stats-subtitle">winners</div>
+                    </div>
+                </div>
+                <div class="stats-divider"></div>
+                <div class="stats-item">
+                    <div class="stats-icon">🎁</div>
+                    <div class="stats-content">
+                        <div class="stats-title">Over £92.6 million</div>
+                        <div class="stats-subtitle">in prizes won</div>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="live-raffles">
             <h2>Live Raffles</h2>
             <div class="raffle-grid">
-                <!-- Updated Prize Card (example) -->
+                <!-- iPhone 15 Prize Card -->
                 <div class="prize-card tilt" data-product-id="iphone15" data-category="tech">
-                    <img src="/assets/images/iphone15.jpg" alt="iPhone 15 Pro">
+                    <img src="assets/images/iphone15.jpg" alt="iPhone 15 Pro">
                     <div class="prize-meta">
-                    <span class="prize-category">Tech</span>
-                    <span class="prize-tickets">487 tickets left</span>
+                        <span class="prize-tickets">487 tickets left</span>
                     </div>
                     <h3>iPhone 15 Pro</h3>
                     <p class="price">R10 per ticket</p>
                     <div class="countdown-timer" data-end-time="2025-04-20T20:00:00Z"></div>
                     <div class="progress-bar-container">
-                    <div class="progress-bar" style="width: 60%;"></div>
-                    <span class="progress-text">60% Sold</span>
+                        <div class="progress-bar" style="width: 60%;"></div>
+                        <span class="progress-text">60% Sold</span>
                     </div>
-                    <a href="/raffles/iphone15.html" class="cta-button">Buy Ticket</a>
+                    <a href="#iphone15" class="cta-button">Buy Ticket</a>
                 </div>
-                <!-- Updated Prize Card (example) -->
-                <div class="prize-card tilt" data-product-id="iphone15" data-category="tech">
-                    <img src="/assets/images/iphone15.jpg" alt="iPhone 15 Pro">
+                <!-- MacBook Pro Prize Card -->
+                <div class="prize-card tilt" data-product-id="macbook" data-category="tech">
+                    <img src="assets/images/macbook-pro.jpg" alt="MacBook Pro">
                     <div class="prize-meta">
-                    <span class="prize-category">Tech</span>
-                    <span class="prize-tickets">487 tickets left</span>
+                        <span class="prize-tickets">342 tickets left</span>
                     </div>
-                    <h3>Macbook Pro</h3>
+                    <h3>MacBook Pro</h3>
                     <p class="price">R20 per ticket</p>
                     <div class="countdown-timer" data-end-time="2025-04-20T20:00:00Z"></div>
                     <div class="progress-bar-container">
-                    <div class="progress-bar" style="width: 60%;"></div>
-                    <span class="progress-text">80% Sold</span>
+                        <div class="progress-bar" style="width: 80%;"></div>
+                        <span class="progress-text">80% Sold</span>
                     </div>
-                    <a href="/raffles/iphone15.html" class="cta-button">Buy Ticket</a>
+                    <a href="#macbook" class="cta-button">Buy Ticket</a>
+                </div>
+                <!-- Holiday Prize Card -->
+                <div class="prize-card tilt" data-product-id="holiday" data-category="travel">
+                    <img src="assets/images/holiday1.jpg" alt="Luxury Holiday">
+                    <div class="prize-meta">
+                        <span class="prize-tickets">250 tickets left</span>
+                    </div>
+                    <h3>Luxury Holiday</h3>
+                    <p class="price">R15 per ticket</p>
+                    <div class="countdown-timer" data-end-time="2025-05-15T20:00:00Z"></div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar" style="width: 40%;"></div>
+                        <span class="progress-text">40% Sold</span>
+                    </div>
+                    <a href="#holiday" class="cta-button">Buy Ticket</a>
                 </div>
                 <div class="prize-card tilt coming-soon">
                     <h3>Coming Soon</h3>
@@ -204,6 +314,9 @@
     <script src="/js/modal.js"></script>
     <script src="/js/carousel.js"></script>
     <script src="/js/product-modal.js"></script>
+    <script src="/js/product-tracking.js"></script>
+    <script src="/js/hero-slider.js"></script>
+    <script src="/js/header.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -214,6 +327,34 @@
             });
 
             startCountdown(document.getElementById('countdown-tesla'), '2025-04-22T20:00:00Z');
+
+            // Mobile menu functionality
+            const menuToggle = document.querySelector('.menu-toggle');
+            const mainNav = document.querySelector('.main-nav');
+            const header = document.querySelector('.site-header');
+            
+            // Toggle menu
+            menuToggle.addEventListener('click', () => {
+                mainNav.classList.toggle('active');
+                document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', (e) => {
+                if (!mainNav.contains(e.target) && !menuToggle.contains(e.target) && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    document.body.style.overflow = '';
+                }
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
 
             initCarousel();
         });
