@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart - Raffle Master</title>
+    <link rel="stylesheet" href="/css/root.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/components/header.css">
+    <link rel="stylesheet" href="/css/components/footer.css">
+    <link rel="stylesheet" href="/css/components/checkout.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="logo">
+            <img src="assets/images/RaffleLogo.png" alt="Raffle Master Logo">
+            <a href="index.html">Raffle Master</a>
+        </div>
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="raffles/raffles.html" class="nav-link">Raffles</a></li>
+                <li><a href="winners.html" class="nav-link">Winners</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="cart.html" class="nav-link cart-link active">Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="raffles/raffles.html" class="nav-link">Raffles</a></li>
+                <li><a href="winners.html" class="nav-link">Winners</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="cart.html" class="nav-link cart-link active">Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Cart Section -->
+        <section class="cart-section">
+            <div class="container">
+                <h1>Your Raffle Tickets</h1>
+                
+                <div class="cart-content">
+                    <!-- Empty Cart State -->
+                    <div class="empty-cart" id="empty-cart">
+                        <img src="/assets/icons/ticket.svg" alt="Empty Cart" class="empty-cart-icon">
+                        <h2>Your cart is empty</h2>
+                        <p>Looks like you haven't added any raffle tickets yet.</p>
+                        <a href="/" class="cta-button">Browse Raffles</a>
+                    </div>
+                    
+                    <!-- Cart Items -->
+                    <div class="cart-items" id="cart-items">
+                        <!-- Cart items will be populated by JavaScript -->
+                    </div>
+                    
+                    <!-- Cart Summary -->
+                    <div class="cart-summary" id="cart-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="cart-subtotal">£0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Processing Fee</span>
+                            <span id="cart-fee">£0</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="cart-total">£0</span>
+                        </div>
+                        <a href="/checkout.html" class="cta-button checkout-button" id="checkout-button">Proceed to Checkout</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Trust Badges -->
+        <section class="trust-badges bg-surface">
+            <div class="container">
+                <div class="badges-grid">
+                    <div class="badge">
+                        <img src="/assets/icons/security.svg" alt="Secure Checkout">
+                        <p>Secure Checkout</p>
+                    </div>
+                    <div class="badge">
+                        <img src="/assets/icons/ticket.svg" alt="Instant Ticket Delivery">
+                        <p>Instant Delivery</p>
+                    </div>
+                    <div class="badge">
+                        <img src="/assets/icons/security.svg" alt="SSL Encrypted">
+                        <p>SSL Encrypted</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Cross-sell Section -->
+        <section class="cross-sell">
+            <div class="container">
+                <h2>You Might Also Like</h2>
+                <div class="raffle-grid">
+                    <!-- Prize Card Component -->
+                    <div class="prize-card tilt">
+                        <img src="/assets/images/macbook.jpg" alt="MacBook Pro">
+                        <h3>MacBook Pro 16"</h3>
+                        <p class="price">£10 per ticket</p>
+                        <div class="countdown-timer" data-end-time="2025-05-15T18:00:00Z"></div>
+                        <a href="#" class="cta-button">Buy Ticket</a>
+                    </div>
+                    
+                    <!-- More cross-sell items can be added here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer component -->
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>Raffle Master</h4>
+                <p>Making dreams come true, one raffle at a time.</p>
+            </div>
+            <div class="footer-column">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/winners.html">Winners</a></li>
+                    <li><a href="/how-it-works.html">How It Works</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact</h4>
+                <ul>
+                    <li>Email: support@dreamraffles.com</li>
+                    <li>Phone: 060 895 7103</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 Raffle Master. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="/js/header.js"></script>
+    <script src="/js/product-modal.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Get cart elements
+            const emptyCartEl = document.getElementById('empty-cart');
+            const cartItemsEl = document.getElementById('cart-items');
+            const cartSummaryEl = document.getElementById('cart-summary');
+            const subtotalEl = document.getElementById('cart-subtotal');
+            const feeEl = document.getElementById('cart-fee');
+            const totalEl = document.getElementById('cart-total');
+            const checkoutButton = document.getElementById('checkout-button');
+            const cartCountEl = document.querySelector('.cart-count');
+            
+            // Get cart from localStorage
+            const cart = JSON.parse(localStorage.getItem('raffle-cart') || '[]');
+            
+            // Update cart count
+            if (cartCountEl) {
+                cartCountEl.textContent = cart.length;
+            }
+            
+            // If cart is empty, show empty state
+            if (cart.length === 0) {
+                emptyCartEl.style.display = 'flex';
+                cartItemsEl.style.display = 'none';
+                cartSummaryEl.style.display = 'none';
+                if (checkoutButton) checkoutButton.style.display = 'none';
+                return;
+            }
+            
+            // Otherwise, hide empty state and show cart
+            emptyCartEl.style.display = 'none';
+            cartItemsEl.style.display = 'block';
+            cartSummaryEl.style.display = 'block';
+            
+            // Populate cart items
+            let subtotal = 0;
+            
+            cart.forEach((item, index) => {
+                const itemTotal = item.quantity * item.price;
+                subtotal += itemTotal;
+                
+                const cartItemEl = document.createElement('div');
+                cartItemEl.className = 'cart-item';
+                cartItemEl.innerHTML = `
+                    <div class="item-details">
+                        <h3>${item.name}</h3>
+                        <p>${item.quantity} ticket${item.quantity > 1 ? 's' : ''} @ £${item.price} each</p>
+                    </div>
+                    <div class="item-price">£${itemTotal}</div>
+                    <button class="remove-item" data-index="${index}">&times;</button>
+                `;
+                
+                cartItemsEl.appendChild(cartItemEl);
+            });
+            
+            // Calculate fees and total
+            const fee = Math.max(1, Math.round(subtotal * 0.05)); // 5% processing fee, minimum £1
+            const total = subtotal + fee;
+            
+            // Update summary
+            subtotalEl.textContent = `£${subtotal}`;
+            feeEl.textContent = `£${fee}`;
+            totalEl.textContent = `£${total}`;
+            
+            // Add event listeners to remove buttons
+            const removeButtons = document.querySelectorAll('.remove-item');
+            removeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const index = parseInt(button.dataset.index);
+                    
+                    // Remove item from cart
+                    cart.splice(index, 1);
+                    
+                    // Update localStorage
+                    localStorage.setItem('raffle-cart', JSON.stringify(cart));
+                    
+                    // Reload page to reflect changes
+                    window.location.reload();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

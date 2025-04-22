@@ -11,8 +11,12 @@ function initHeroSlider() {
     if (!slides.length) return;
     
     let currentSlide = 0;
+    let isAnimating = false;
     let slideInterval;
     const autoPlayDelay = 5000; // 5 seconds between slides
+    
+    // Preload all background images to prevent flashing
+    preloadSlideImages();
     
     // Create dots for each slide
     slides.forEach((_, index) => {
@@ -35,7 +39,22 @@ function initHeroSlider() {
     sliderContainer.addEventListener('mouseenter', stopAutoPlay);
     sliderContainer.addEventListener('mouseleave', startAutoPlay);
     
+    function preloadSlideImages() {
+        // Preload all background images to prevent flashing
+        slides.forEach(slide => {
+            const bgImg = slide.style.backgroundImage;
+            if (bgImg) {
+                const url = bgImg.replace(/url\(['"]?(.*?)['"]?\)/i, '$1');
+                const img = new Image();
+                img.src = url;
+            }
+        });
+    }
+    
     function goToSlide(index) {
+        if (isAnimating || index === currentSlide) return;
+        isAnimating = true;
+        
         // Remove active class from all slides and dots
         slides.forEach(slide => slide.classList.remove('active'));
         document.querySelectorAll('.slider-dot').forEach(dot => dot.classList.remove('active'));
@@ -45,6 +64,11 @@ function initHeroSlider() {
         document.querySelectorAll('.slider-dot')[index].classList.add('active');
         
         currentSlide = index;
+        
+        // Reset animation flag after transition completes
+        setTimeout(() => {
+            isAnimating = false;
+        }, 1000); // Match this to the transition duration in CSS
     }
     
     function nextSlide() {

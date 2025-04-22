@@ -91,6 +91,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
 }
 
 .price-tag-text {
@@ -105,6 +106,7 @@
   line-height: 1;
   font-weight: 900;
   margin-top: 4px;
+  color:white ;
 }
 
 .price-tag-amount span {
@@ -712,7 +714,7 @@
   position: absolute;
   bottom: 25%;
   right: 12%;
-  background-color: #ff4e50;
+  background: var(--chip-color);
   color: white;
   border-radius: 50%;
   width: 120px;
@@ -723,19 +725,76 @@
   align-items: center;
   font-weight: bold;
   transform: rotate(10deg);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
-  animation: pulse 2s infinite;
+  box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.35),
+    inset 0 2px 10px rgba(255,255,255,0.3),
+    inset 0 -2px 10px rgba(0,0,0,0.3);
   z-index: 5;
-  border: 2px solid rgba(255, 255, 255, 0.7);
+  border: 3px solid rgba(255,255,255,0.9);
+  transition: transform 0.3s ease;
+}
+
+.bonus-tag::before {
+  content: '';
+  position: absolute;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  border: 2px solid rgba(255,255,255,0.4);
+  top: 5%;
+  left: 5%;
+}
+
+.bonus-tag::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: repeating-conic-gradient(
+    from 0deg,
+    rgba(255,255,255,0.8) 0deg 15deg,
+    transparent 15deg 30deg
+  );
+  mask: radial-gradient(
+    transparent 65%,
+    black 65% 100%
+  );
+  -webkit-mask: radial-gradient(
+    transparent 65%,
+    black 65% 100%
+  );
+}
+
+.bonus-tag:hover {
+  transform: rotate(10deg) scale(1.05);
+  animation: glow 1.5s infinite alternate;
 }
 
 .bonus-tag span {
-  font-size: 1rem;
+  font-size: 0.9rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 
 .bonus-tag strong {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   margin: 3px 0;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 
+      0 10px 25px rgba(0, 0, 0, 0.35),
+      inset 0 2px 10px rgba(255,255,255,0.3),
+      inset 0 -2px 10px rgba(0,0,0,0.3);
+  }
+  to {
+    box-shadow:
+      0 10px 25px rgba(0, 0, 0, 0.35),
+      inset 0 2px 10px rgba(255,255,255,0.3),
+      inset 0 -2px 10px rgba(0,0,0,0.3),
+      0 0 20px var(--chip-color);
+  }
 }
 
 .hero-slide.active .hero-content {

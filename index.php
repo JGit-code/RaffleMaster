@@ -44,86 +44,108 @@
 
                 <!-- Slide 2: iPhone 15 Pro -->
                 <div class="hero-slide" style="background-image: url('assets/images/tech-background.jpg');">
-                    <div class="prize-tag">TECH GIVEAWAY</div>
+                    <div class="slide-overlay"></div>
+                    <div class="dream-car-tag">TECH GIVEAWAY</div>
                     <div class="price-tag">
-                        <div class="price-tag-text">TICKETS FROM</div>
-                        <div class="price-tag-amount">£10</div>
+                        <div class="price-tag-text">TICKETS</div>
+                        <div class="price-tag-amount">R10</div>
                     </div>
-                    <div class="product-container iphone-container">
-                        <img src="assets/images/iphone15.jpg" alt="iPhone 15 Pro" class="hero-product iphone-product">
+                    <div class="cars-container iphone-container">
+                        <img src="assets/images/iphone15.jpg" alt="iPhone 15 Pro" class="hero-car iphone-car">
                     </div>
                     <div class="hero-content">
                         <h1>WIN THE LATEST iPHONE 15 PRO!</h1>
                         <p>Your chance to win Apple's flagship smartphone with incredible camera and performance!</p>
-                        <a href="#iphone15" class="enter-btn">ENTER TO WIN »</a>
+                        <a href="#" class="enter-btn" data-product="iphone15" data-toggle="modal" data-target="#ticket-modal">ENTER TO WIN »</a>
+                    </div>
+                    <div class="bonus-tag">
+                        <span>OR</span>
+                        <strong>R15,000</strong>
+                        <span>CASH PRIZE</span>
                     </div>
                 </div>
 
                 <!-- Slide 3: MacBook Pro -->
                 <div class="hero-slide" style="background-image: url('assets/images/desk-background.jpg');">
-                    <div class="prize-tag">PRO GEAR</div>
+                    <div class="slide-overlay"></div>
+                    <div class="dream-car-tag">PRO GEAR</div>
                     <div class="price-tag">
-                        <div class="price-tag-text">TICKETS FROM</div>
-                        <div class="price-tag-amount">£20</div>
+                        <div class="price-tag-text">TICKETS</div>
+                        <div class="price-tag-amount">R20</div>
                     </div>
-                    <div class="product-container macbook-container">
-                        <img src="assets/images/macbook-pro.jpg" alt="MacBook Pro" class="hero-product macbook-product">
+                    <div class="cars-container macbook-container">
+                        <img src="assets/images/macbook-pro.jpg" alt="MacBook Pro" class="hero-car macbook-car">
                     </div>
                     <div class="hero-content">
                         <h1>MACBOOK PRO GIVEAWAY!</h1>
                         <p>Take your productivity to the next level with Apple's most powerful laptop!</p>
-                        <a href="#macbook" class="enter-btn">ENTER NOW »</a>
+                        <a href="#" class="enter-btn" data-product="macbook" data-toggle="modal" data-target="#ticket-modal">ENTER NOW »</a>
+                    </div>
+                    <div class="bonus-tag">
+                        <span>OR</span>
+                        <strong>R25,000</strong>
+                        <span>CASH PRIZE</span>
                     </div>
                 </div>
 
                 <!-- Slide 4: Holiday & Crypto -->
                 <div class="hero-slide" style="background-image: url('assets/images/holiday1.jpg');">
-                    <div class="prize-tag">DUAL PRIZE</div>
+                    <div class="slide-overlay"></div>
+                    <div class="dream-car-tag">FAMILY TRIP</div>
                     <div class="price-tag">
-                        <div class="price-tag-text">TICKETS FROM</div>
-                        <div class="price-tag-amount">£15</div>
-                    </div>
-                    <div class="dual-container">
-                        <div class="crypto-icon">₿</div>
+                        <div class="price-tag-text">TICKETS</div>
+                        <div class="price-tag-amount">R15</div>
                     </div>
                     <div class="hero-content">
-                        <h1>LUXURY HOLIDAY + CRYPTO!</h1>
-                        <p>Win a dream vacation AND £5,000 in cryptocurrency of your choice!</p>
-                        <a href="#holiday-crypto" class="enter-btn">SPIN & WIN »</a>
+                        <h1>LUXURY HOLIDAY</h1>
+                        <p>Win a dream vacation</p>
+                        <a href="#" class="enter-btn" data-product="holiday-crypto" data-toggle="modal" data-target="#ticket-modal">ENTER TO WIN »</a>
                     </div>
                 </div>
                 
                 <!-- Slide 5: PlayStation 5 Bundle -->
                 <div class="hero-slide" style="background-image: url('assets/images/gaming-background.jpg');">
-                    <div class="prize-tag">GAMING BUNDLE</div>
+                    <div class="slide-overlay"></div>
+                    <div class="dream-car-tag">GAMING BUNDLE</div>
                     <div class="price-tag">
-                        <div class="price-tag-text">TICKETS FROM</div>
-                        <div class="price-tag-amount">£12.50</div>
+                        <div class="price-tag-text">TICKETS</div>
+                        <div class="price-tag-amount">R12.50</div>
                     </div>
-                    <div class="product-container gaming-container">
-                        <img src="assets/images/playstation5.jpg" alt="PlayStation 5" class="hero-product ps5-product">
+                    <div class="cars-container gaming-container">
+                        <img src="assets/images/playstation5.jpg" alt="PlayStation 5" class="hero-car ps5-car">
                     </div>
                     <div class="hero-content">
                         <h1>WIN A PS5 ULTIMATE BUNDLE!</h1>
                         <p>PlayStation 5 console, extra controller, headset, and 5 games of your choice!</p>
-                        <a href="#gaming" class="enter-btn">GAME ON! »</a>
+                        <a href="#" class="enter-btn" data-product="gaming" data-toggle="modal" data-target="#ticket-modal">ENTER TO WIN »</a>
+                    </div>
+                    <div class="bonus-tag">
+                        <span>OR</span>
+                        <strong>R10,000</strong>
+                        <span>CASH PRIZE</span>
                     </div>
                 </div>
                 
                 <!-- Slide 6: Home Renovation Package -->
                 <div class="hero-slide" style="background-image: url('assets/images/home-background.jpg');">
-                    <div class="prize-tag">HOME MAKEOVER</div>
+                    <div class="slide-overlay"></div>
+                    <div class="dream-car-tag">HOME MAKEOVER</div>
                     <div class="price-tag">
-                        <div class="price-tag-text">TICKETS FROM</div>
-                        <div class="price-tag-amount">£25</div>
+                        <div class="price-tag-text">TICKETS</div>
+                        <div class="price-tag-amount">R25</div>
                     </div>
-                    <div class="product-container home-container">
-                        <img src="assets/images/home-renovation.jpg" alt="Home Renovation" class="hero-product home-product">
+                    <div class="cars-container home-container">
+                        <img src="assets/images/home-renovation.jpg" alt="Home Renovation" class="hero-car home-car">
                     </div>
                     <div class="hero-content">
                         <h1>£25,000 HOME RENOVATION PACKAGE!</h1>
                         <p>Transform your living space with this incredible home makeover prize!</p>
-                        <a href="#home-makeover" class="enter-btn">ENTER NOW »</a>
+                        <a href="#" class="enter-btn" data-product="home-makeover" data-toggle="modal" data-target="#ticket-modal">ENTER TO WIN »</a>
+                    </div>
+                    <div class="bonus-tag">
+                        <span>OR</span>
+                        <strong>R25,000</strong>
+                        <span>CASH PRIZE</span>
                     </div>
                 </div>
             </div>

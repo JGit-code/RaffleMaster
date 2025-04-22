@@ -15,22 +15,4 @@
             <li><a href="cart.php" class="nav-link cart-link">Cart <span class="cart-count">0</span></a></li>
         </ul>
     </nav>
-    <!-- Mobile Menu Toggle -->
-    <button class="menu-toggle" aria-label="Toggle menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-    <!-- Overlay for mobile menu -->
-    <div class="menu-overlay"></div>
 </header>
-<!-- Mobile Navigation (outside header for positioning) -->
-<nav class="mobile-nav">
-    <ul>
-        <li><a href="index.php" class="nav-link">HOME</a></li>
-        <li><a href="raffles.php" class="nav-link">COMPETITIONS</a></li>
-        <li><a href="winners.php" class="nav-link">WINNERS</a></li>
-        <li><a href="how-it-works.php" class="nav-link">HOW IT WORKS</a></li>
-        <li><a href="cart.php" class="nav-link cart-link">Cart <span class="cart-count">0</span></a></li>
-    </ul>
-</nav>

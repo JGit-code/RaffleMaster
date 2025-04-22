@@ -52,6 +52,7 @@ function initCarousel() {
     dots.forEach(dot => {
       dot.addEventListener('click', () => {
         goToSlide(parseInt(dot.dataset.slide));
+        resetAutoplay(); // Reset timer when clicking dot
       });
     });
   }
@@ -110,7 +111,7 @@ function initCarousel() {
   
   // Start autoplay
   function startAutoplay() {
-    autoplayInterval = setInterval(nextSlide, 5000); // Change slide every 5 seconds
+    autoplayInterval = setInterval(nextSlide, 10000); // Change slide every 10 seconds
   }
   
   // Reset autoplay (after user interaction)
