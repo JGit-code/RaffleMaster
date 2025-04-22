@@ -174,7 +174,7 @@
 
 /* Add styling for header when mobile menu is active */
 .site-header.menu-active {
-  background-color: #a1d6e2;
+  background-color: #a1d6e2; /* Baby blue color */
 }
 
 .site-header.menu-active .menu-toggle span {
@@ -190,7 +190,7 @@
 .mobile-nav {
   display: none;
   position: fixed;
-  top: 60px;
+  top: 80px;
   left: 0;
   right: 0;
   bottom: 0;
@@ -201,14 +201,15 @@
 
 .mobile-nav.active {
   display: block;
-  background-color: #a1d6e2;
+  background-color: #a1d6e2; /* Baby blue color */
   position: absolute;
-  top: 60px;
+  top: 80px;
   left: 0;
   right: 0;
   bottom: auto;
-  height: auto;
-  overflow: visible;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-nav ul {
@@ -278,26 +279,30 @@
 
 @media (max-width: 768px) {
   .site-header {
-    height: 60px;
     padding: 0 1rem;
+    height: 60px;
   }
-
+  
   .logo img {
-    height: 28px;
+    height: 30px;
   }
-
+  
   .logo a {
     font-size: 1.1rem;
   }
-
+  
   .desktop-nav {
     display: none;
   }
-
+  
   .menu-toggle {
     display: block;
   }
-
+  
+  .mobile-nav.active {
+    top: 60px;
+  }
+  
   body.menu-open {
     overflow: hidden;
   }
@@ -351,4 +356,8 @@ main {
 
 html {
   scroll-behavior: smooth;
+}
+
+body.menu-open {
+  overflow: hidden;
 }

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Cart - Raffle Master</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components/header.css">
@@ -11,21 +12,7 @@
     <link rel="stylesheet" href="css/components/checkout.css">
 </head>
 <body>
-    <!-- Header component -->
-    <header class="site-header">
-        <div class="logo">
-            <a href="/">Raffle Master</a>
-        </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="raffles/raffles.html">Raffles</a></li>
-                <li><a href="winners.html">Winners</a></li>
-                <li><a href="how-it-works.html">How It Works</a></li>
-                <li><a href="cart.html" class="cart-link active">Cart <span class="cart-count">0</span></a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include 'header.php'; ?>
 
     <main>
         <!-- Cart Section -->
@@ -36,10 +23,10 @@
                 <div class="cart-content">
                     <!-- Empty Cart State -->
                     <div class="empty-cart" id="empty-cart">
-                        <img src="/assets/icons/ticket.svg" alt="Empty Cart" class="empty-cart-icon">
+                        <img src="assets/icons/ticket.svg" alt="Empty Cart" class="empty-cart-icon">
                         <h2>Your cart is empty</h2>
                         <p>Looks like you haven't added any raffle tickets yet.</p>
-                        <a href="/" class="cta-button">Browse Raffles</a>
+                        <a href="index.php" class="cta-button">Browse Raffles</a>
                     </div>
                     
                     <!-- Cart Items -->
@@ -62,7 +49,7 @@
                             <span>Total</span>
                             <span id="cart-total">£0</span>
                         </div>
-                        <a href="/checkout.html" class="cta-button checkout-button" id="checkout-button">Proceed to Checkout</a>
+                        <a href="checkout.php" class="cta-button checkout-button" id="checkout-button">Proceed to Checkout</a>
                     </div>
                 </div>
             </div>
@@ -73,15 +60,15 @@
             <div class="container">
                 <div class="badges-grid">
                     <div class="badge">
-                        <img src="/assets/icons/security.svg" alt="Secure Checkout">
+                        <img src="assets/icons/security.svg" alt="Secure Checkout">
                         <p>Secure Checkout</p>
                     </div>
                     <div class="badge">
-                        <img src="/assets/icons/ticket.svg" alt="Instant Ticket Delivery">
+                        <img src="assets/icons/ticket.svg" alt="Instant Ticket Delivery">
                         <p>Instant Delivery</p>
                     </div>
                     <div class="badge">
-                        <img src="/assets/icons/security.svg" alt="SSL Encrypted">
+                        <img src="assets/icons/security.svg" alt="SSL Encrypted">
                         <p>SSL Encrypted</p>
                     </div>
                 </div>
@@ -95,7 +82,7 @@
                 <div class="raffle-grid">
                     <!-- Prize Card Component -->
                     <div class="prize-card tilt">
-                        <img src="/assets/images/macbook.jpg" alt="MacBook Pro">
+                        <img src="assets/images/macbook.jpg" alt="MacBook Pro">
                         <h3>MacBook Pro 16"</h3>
                         <p class="price">£10 per ticket</p>
                         <div class="countdown-timer" data-end-time="2025-05-15T18:00:00Z"></div>
@@ -108,41 +95,9 @@
         </section>
     </main>
 
-    <!-- Footer component -->
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h4>Raffle Master</h4>
-                <p>Making dreams come true, one raffle at a time.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/winners.html">Winners</a></li>
-                    <li><a href="/how-it-works.html">How It Works</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contact</h4>
-                <ul>
-                    <li>Email: support@dreamraffles.com</li>
-                    <li>Phone: 01234 567890</li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2023 Raffle Master. All rights reserved.</p>
-        </div>
-    </footer>
+    <?php include 'footer.php'; ?>
+
+    <script src="js/header.js"></script>
     <script src="js/product-modal.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {

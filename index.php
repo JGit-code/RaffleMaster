@@ -15,37 +15,7 @@
     <link rel="stylesheet" href="css/components/hero.css">
 </head>
 <body>
-    <header class="site-header">
-        <div class="logo">
-            <img src="assets/images/RaffleLogo.png" alt="Raffle Master Logo">
-            <a href="index.html">Raffle Master</a>
-        </div>
-        <nav class="desktop-nav">
-            <ul>
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="raffles/raffles.html" class="nav-link">Raffles</a></li>
-                <li><a href="winners.html" class="nav-link">Winners</a></li>
-                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
-                <li><a href="cart.html" class="nav-link cart-link">Cart <span class="cart-count">0</span></a></li>
-            </ul>
-        </nav>
-        <button class="menu-toggle" aria-label="Toggle Menu">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-        <nav class="mobile-nav">
-            <ul>
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/raffles/raffles.html" class="nav-link">Raffles</a></li>
-                <li><a href="/winners.html" class="nav-link">Winners</a></li>
-                <li><a href="/how-it-works.html" class="nav-link">How It Works</a></li>
-                <li><a href="/cart.html" class="nav-link cart-link">Cart <span class="cart-count">0</span></a></li>
-            </ul>
-        </nav>
-        <div class="menu-overlay"></div>
-    </header>
-
+    <?php include 'header.php'; ?>
     <main>
         <section class="hero-banner">
             <div class="hero-slider">
@@ -115,7 +85,41 @@
                     <div class="hero-content">
                         <h1>LUXURY HOLIDAY + CRYPTO!</h1>
                         <p>Win a dream vacation AND £5,000 in cryptocurrency of your choice!</p>
-                        <a href="#holiday-crypto" class="enter-btn">SPIN & WIN</a> »</a>
+                        <a href="#holiday-crypto" class="enter-btn">SPIN & WIN »</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 5: PlayStation 5 Bundle -->
+                <div class="hero-slide" style="background-image: url('assets/images/gaming-background.jpg');">
+                    <div class="prize-tag">GAMING BUNDLE</div>
+                    <div class="price-tag">
+                        <div class="price-tag-text">TICKETS FROM</div>
+                        <div class="price-tag-amount">£12.50</div>
+                    </div>
+                    <div class="product-container gaming-container">
+                        <img src="assets/images/playstation5.jpg" alt="PlayStation 5" class="hero-product ps5-product">
+                    </div>
+                    <div class="hero-content">
+                        <h1>WIN A PS5 ULTIMATE BUNDLE!</h1>
+                        <p>PlayStation 5 console, extra controller, headset, and 5 games of your choice!</p>
+                        <a href="#gaming" class="enter-btn">GAME ON! »</a>
+                    </div>
+                </div>
+                
+                <!-- Slide 6: Home Renovation Package -->
+                <div class="hero-slide" style="background-image: url('assets/images/home-background.jpg');">
+                    <div class="prize-tag">HOME MAKEOVER</div>
+                    <div class="price-tag">
+                        <div class="price-tag-text">TICKETS FROM</div>
+                        <div class="price-tag-amount">£25</div>
+                    </div>
+                    <div class="product-container home-container">
+                        <img src="assets/images/home-renovation.jpg" alt="Home Renovation" class="hero-product home-product">
+                    </div>
+                    <div class="hero-content">
+                        <h1>£25,000 HOME RENOVATION PACKAGE!</h1>
+                        <p>Transform your living space with this incredible home makeover prize!</p>
+                        <a href="#home-makeover" class="enter-btn">ENTER NOW »</a>
                     </div>
                 </div>
             </div>
@@ -207,17 +211,17 @@
             <h2>Why Choose Us</h2>
             <div class="trust-grid">
                 <div class="trust-item">
-                    <img src="/assets/icons/security.svg" alt="Security Icon">
+                    <img src="assets/icons/security.svg" alt="Security Icon">
                     <h3>Secure Checkout</h3>
                     <p>All transactions are SSL encrypted.</p>
                 </div>
                 <div class="trust-item">
-                    <img src="/assets/icons/ticket.svg" alt="Fair Draw Icon">
+                    <img src="assets/icons/ticket.svg" alt="Fair Draw Icon">
                     <h3>Fair Draws</h3>
                     <p>Random winners selected by verified algorithm.</p>
                 </div>
                 <div class="trust-item">
-                    <img src="/assets/icons/trophy.svg" alt="Winners Icon">
+                    <img src="assets/icons/trophy.svg" alt="Winners Icon">
                     <h3>Real Winners</h3>
                     <p>See our gallery of past winners and testimonials.</p>
                 </div>
@@ -228,7 +232,7 @@
             <h2>Hear From Our Winners</h2>
             <div class="testimonial-carousel">
                 <div class="testimonial-slide">
-                    <img src="/assets/images/winners/winner1.jpg" alt="John D.">
+                    <img src="assets/images/winners/winner1.jpg" alt="John D.">
                     <blockquote>
                         "I never thought I'd actually win! The Tesla is amazing and the whole process was so smooth."
                     </blockquote>
@@ -238,40 +242,7 @@
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h4>Raffle Master</h4>
-                <p>Making dreams come true, one raffle at a time.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/winners.html">Winners</a></li>
-                    <li><a href="/how-it-works.html">How It Works</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contact</h4>
-                <ul>
-                    <li>Email: support@dreamraffles.com</li>
-                    <li>Phone: 01234 567890</li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2023 Raffle Master. All rights reserved.</p>
-        </div>
-    </footer>
+    <?php include 'footer.php'; ?>
 
     <!-- Ticket Purchase Modal (updated version) -->
     <div class="modal-container" id="ticket-modal">
@@ -296,20 +267,20 @@
         </div>
     </div>
 
-    <!-- Product Detail Modal (to be added to index.html and raffles/index.html) -->
-<div class="modal-container" id="product-detail-modal">
-    <div class="modal product-modal">
-      <button class="modal-close" id="product-modal-close">&times;</button>
-      
-      <div class="product-modal-content">
-        <!-- Product details will be dynamically loaded here -->
-        <div class="product-modal-loading">
-          <div class="spinner"></div>
-          <span>Loading product details...</span>
+    <!-- Product Detail Modal (to be added to index.php and raffles/index.php) -->
+    <div class="modal-container" id="product-detail-modal">
+        <div class="modal product-modal">
+          <button class="modal-close" id="product-modal-close">&times;</button>
+          
+          <div class="product-modal-content">
+            <!-- Product details will be dynamically loaded here -->
+            <div class="product-modal-loading">
+              <div class="spinner"></div>
+              <span>Loading product details...</span>
+            </div>
+          </div>
         </div>
-      </div>
     </div>
-  </div>
 
     <script src="js/countdown.js"></script>
     <script src="js/modal.js"></script>

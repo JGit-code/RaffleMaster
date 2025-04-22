@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Past Winners - Raffle Master</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components/header.css">
@@ -11,21 +12,7 @@
     <link rel="stylesheet" href="css/components/animation.css">
 </head>
 <body>
-    <!-- Header component -->
-    <header class="site-header">
-        <div class="logo">
-            <a href="/">Raffle Master</a>
-        </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="raffles/raffles.html">Raffles</a></li>
-                <li><a href="winners.html" class="active">Winners</a></li>
-                <li><a href="how-it-works.html">How It Works</a></li>
-                <li><a href="cart.html" class="cart-link">Cart <span class="cart-count">0</span></a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include 'header.php'; ?>
 
     <main>
         <!-- Winners Hero Section -->
@@ -45,7 +32,7 @@
                         <div class="timeline-date">April 2023</div>
                         <div class="timeline-content">
                             <div class="winner-card">
-                                <img src="/assets/images/winners/winner1.jpg" alt="John D.">
+                                <img src="assets/images/winners/winner1.jpg" alt="John D.">
                                 <div class="winner-info">
                                     <h3>John D. from London</h3>
                                     <h4>Tesla Model S</h4>
@@ -61,7 +48,7 @@
                         <div class="timeline-date">March 2023</div>
                         <div class="timeline-content">
                             <div class="winner-card">
-                                <img src="/assets/images/winners/winner2.jpg" alt="Sarah M.">
+                                <img src="assets/images/winners/winner2.jpg" alt="Sarah M.">
                                 <div class="winner-info">
                                     <h3>Sarah M. from Manchester</h3>
                                     <h4>MacBook Pro 16"</h4>
@@ -77,7 +64,7 @@
                         <div class="timeline-date">February 2023</div>
                         <div class="timeline-content">
                             <div class="winner-card">
-                                <img src="/assets/images/winners/winner3.jpg" alt="Mike T.">
+                                <img src="assets/images/winners/winner3.jpg" alt="Mike T.">
                                 <div class="winner-info">
                                     <h3>Mike T. from Birmingham</h3>
                                     <h4>PlayStation 5 Bundle</h4>
@@ -93,7 +80,7 @@
                         <div class="timeline-date">January 2023</div>
                         <div class="timeline-content">
                             <div class="winner-card">
-                                <img src="/assets/images/winners/winner1.jpg" alt="Emma P.">
+                                <img src="assets/images/winners/winner1.jpg" alt="Emma P.">
                                 <div class="winner-info">
                                     <h3>Emma P. from Bristol</h3>
                                     <h4>iPhone 14 Pro</h4>
@@ -117,7 +104,7 @@
                     <!-- Video Testimonial -->
                     <div class="video-card">
                         <div class="video-thumbnail">
-                            <img src="/assets/images/winners/winner1.jpg" alt="John's Tesla Win">
+                            <img src="assets/images/winners/winner1.jpg" alt="John's Tesla Win">
                             <div class="play-button"></div>
                         </div>
                         <h3>John's Tesla Win</h3>
@@ -126,7 +113,7 @@
                     <!-- Video Testimonial -->
                     <div class="video-card">
                         <div class="video-thumbnail">
-                            <img src="/assets/images/winners/winner2.jpg" alt="Sarah's MacBook Story">
+                            <img src="assets/images/winners/winner2.jpg" alt="Sarah's MacBook Story">
                             <div class="play-button"></div>
                         </div>
                         <h3>Sarah's MacBook Story</h3>
@@ -140,48 +127,15 @@
             <div class="container">
                 <h2>You Could Be Next!</h2>
                 <p>Enter our latest raffles for your chance to win amazing prizes.</p>
-                <a href="/" class="cta-button pulse-animation">Enter Now</a>
+                <a href="index.php" class="cta-button pulse-animation">Enter Now</a>
             </div>
         </section>
     </main>
 
-    <!-- Footer component -->
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h4>Raffle Master</h4>
-                <p>Making dreams come true, one raffle at a time.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/winners.html">Winners</a></li>
-                    <li><a href="/how-it-works.html">How It Works</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contact</h4>
-                <ul>
-                    <li>Email: support@dreamraffles.com</li>
-                    <li>Phone: 01234 567890</li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2023 Raffle Master. All rights reserved.</p>
-        </div>
-    </footer>
+    <?php include 'footer.php'; ?>
 
     <!-- Scripts -->
+    <script src="js/header.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Video thumbnail click handlers

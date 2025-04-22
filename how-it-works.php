@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How It Works - Raffle Master</title>
+    <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/root.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components/header.css">
@@ -11,21 +12,7 @@
     <link rel="stylesheet" href="css/components/animation.css">
 </head>
 <body>
-    <!-- Header component -->
-    <header class="site-header">
-        <div class="logo">
-            <a href="/">Raffle Master</a>
-        </div>
-        <nav class="main-nav">
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/raffles/raffles.html">Raffles</a></li>
-                <li><a href="/winners.html">Winners</a></li>
-                <li><a href="/how-it-works.html" class="active">How It Works</a></li>
-                <li><a href="/cart.html" class="cart-link">Cart <span class="cart-count">0</span></a></li>
-            </ul>
-        </nav>
-    </header>
+    <?php include 'header.php'; ?>
 
     <main>
         <!-- Hero Section -->
@@ -44,42 +31,42 @@
                         <div class="step-number">1</div>
                         <h3>Choose Your Prize</h3>
                         <p>Browse our selection of premium prizes. From the latest tech to luxury cars, we have something for everyone.</p>
-                        <img src="/assets/icons/ticket.svg" alt="Choose Prize" class="step-icon">
+                        <img src="assets/icons/ticket.svg" alt="Choose Prize" class="step-icon">
                     </div>
                     
                     <div class="step-card">
                         <div class="step-number">2</div>
                         <h3>Buy Your Tickets</h3>
                         <p>Select how many tickets you want to purchase. More tickets mean a higher chance of winning!</p>
-                        <img src="/assets/icons/ticket.svg" alt="Buy Tickets" class="step-icon">
+                        <img src="assets/icons/ticket.svg" alt="Buy Tickets" class="step-icon">
                     </div>
                     
                     <div class="step-card">
                         <div class="step-number">3</div>
                         <h3>Get Confirmation</h3>
                         <p>Receive your raffle tickets by email with your unique ticket numbers for the draw.</p>
-                        <img src="/assets/icons/ticket.svg" alt="Confirmation" class="step-icon">
+                        <img src="assets/icons/ticket.svg" alt="Confirmation" class="step-icon">
                     </div>
                     
                     <div class="step-card">
                         <div class="step-number">4</div>
                         <h3>Wait for the Draw</h3>
                         <p>Each raffle has a closing date. The draw happens either when all tickets are sold or when the timer ends.</p>
-                        <img src="/assets/icons/timer.svg" alt="Draw Timer" class="step-icon">
+                        <img src="assets/icons/timer.svg" alt="Draw Timer" class="step-icon">
                     </div>
                     
                     <div class="step-card">
                         <div class="step-number">5</div>
                         <h3>Winner Selection</h3>
                         <p>We use a random number generator to select the winning ticket. The draw is recorded for transparency.</p>
-                        <img src="/assets/icons/trophy.svg" alt="Winner Selection" class="step-icon">
+                        <img src="assets/icons/trophy.svg" alt="Winner Selection" class="step-icon">
                     </div>
                     
                     <div class="step-card">
                         <div class="step-number">6</div>
                         <h3>Collect Your Prize</h3>
                         <p>If you win, we'll contact you within 24 hours to arrange delivery of your prize.</p>
-                        <img src="/assets/icons/trophy.svg" alt="Collect Prize" class="step-icon">
+                        <img src="assets/icons/trophy.svg" alt="Collect Prize" class="step-icon">
                     </div>
                 </div>
             </div>
@@ -161,25 +148,25 @@
                 
                 <div class="trust-grid">
                     <div class="trust-item">
-                        <img src="/assets/icons/security.svg" alt="Secure Icon">
+                        <img src="assets/icons/security.svg" alt="Secure Icon">
                         <h3>100% Secure</h3>
                         <p>All transactions are SSL encrypted and your data is never shared with third parties.</p>
                     </div>
                     
                     <div class="trust-item">
-                        <img src="/assets/icons/ticket.svg" alt="Fair Draw Icon">
+                        <img src="assets/icons/ticket.svg" alt="Fair Draw Icon">
                         <h3>Fair Draws</h3>
                         <p>Our random selection process is verified and audited for complete fairness.</p>
                     </div>
                     
                     <div class="trust-item">
-                        <img src="/assets/icons/trophy.svg" alt="Real Prizes Icon">
+                        <img src="assets/icons/trophy.svg" alt="Real Prizes Icon">
                         <h3>Real Prizes</h3>
                         <p>All prizes are exactly as described and delivered quickly to winners.</p>
                     </div>
                     
                     <div class="trust-item">
-                        <img src="/assets/icons/security.svg" alt="Support Icon">
+                        <img src="assets/icons/security.svg" alt="Support Icon">
                         <h3>24/7 Support</h3>
                         <p>Our customer service team is always available to help with any questions.</p>
                     </div>
@@ -192,70 +179,32 @@
             <div class="container">
                 <h2>Ready to Try Your Luck?</h2>
                 <p>Enter our latest raffles for your chance to win amazing prizes.</p>
-                <a href="/" class="cta-button pulse-animation">Enter Now</a>
+                <a href="index.php" class="cta-button pulse-animation">Enter Now</a>
             </div>
         </section>
     </main>
 
-    <!-- Footer component -->
-    <footer class="site-footer">
-        <div class="footer-grid">
-            <div class="footer-column">
-                <h4>Raffle Master</h4>
-                <p>Making dreams come true, one raffle at a time.</p>
-            </div>
-            <div class="footer-column">
-                <h4>Quick Links</h4>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/winners.html">Winners</a></li>
-                    <li><a href="/how-it-works.html">How It Works</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Legal</h4>
-                <ul>
-                    <li><a href="#">Terms & Conditions</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Cookie Policy</a></li>
-                </ul>
-            </div>
-            <div class="footer-column">
-                <h4>Contact</h4>
-                <ul>
-                    <li>Email: support@dreamraffles.com</li>
-                    <li>Phone: 01234 567890</li>
-                </ul>
-            </div>
-        </div>
-        <div class="copyright">
-            <p>&copy; 2023 Raffle Master. All rights reserved.</p>
-        </div>
-    </footer>
+    <?php include 'footer.php'; ?>
 
     <!-- Scripts -->
+    <script src="js/header.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function() {
             // Accordion functionality
             const accordionHeaders = document.querySelectorAll('.accordion-header');
             
             accordionHeaders.forEach(header => {
-                header.addEventListener('click', () => {
-                    const parent = header.parentElement;
-                    parent.classList.toggle('active');
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
                     
-                    // Toggle the + and - icons
-                    const icon = header.querySelector('.accordion-icon');
-                    icon.textContent = parent.classList.contains('active') ? '−' : '+';
-                    
-                    // Close other accordion items
-                    const siblings = Array.from(parent.parentElement.children)
-                        .filter(item => item !== parent && item.classList.contains('active'));
-                    
-                    siblings.forEach(sibling => {
-                        sibling.classList.remove('active');
-                        sibling.querySelector('.accordion-icon').textContent = '+';
-                    });
+                    const content = this.nextElementSibling;
+                    if (content.style.maxHeight) {
+                        content.style.maxHeight = null;
+                        this.querySelector('.accordion-icon').textContent = '+';
+                    } else {
+                        content.style.maxHeight = content.scrollHeight + 'px';
+                        this.querySelector('.accordion-icon').textContent = '−';
+                    }
                 });
             });
             

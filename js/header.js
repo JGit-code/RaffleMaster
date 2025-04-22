@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileNav.classList.toggle('active');
         siteHeader.classList.toggle('menu-active');
         menuOverlay.classList.toggle('active');
-        document.body.style.overflow = mobileNav.classList.contains('active') ? 'hidden' : '';
+        document.body.classList.toggle('menu-open');
     });
 
     // Close menu when clicking outside
@@ -20,8 +20,20 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileNav.classList.remove('active');
             siteHeader.classList.remove('menu-active');
             menuOverlay.classList.remove('active');
-            document.body.style.overflow = '';
+            document.body.classList.remove('menu-open');
         }
+    });
+
+    // Close menu when clicking on a link
+    const mobileNavLinks = mobileNav.querySelectorAll('.nav-link');
+    mobileNavLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            menuToggle.classList.remove('active');
+            mobileNav.classList.remove('active');
+            siteHeader.classList.remove('menu-active');
+            menuOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
     });
 
     // Header scroll effect

@@ -134,7 +134,7 @@
 
 .sports-car {
   height: 35%;
-  right: 40%;
+  left: 5%;
   z-index: 3;
   filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
@@ -197,6 +197,22 @@
 
 .macbook-product {
   max-width: 70%;
+}
+
+/* Add classes for Tesla and PS5 slides */
+.tesla-container {
+  right: 5%;
+}
+.tesla-product {
+  max-width: 70%;
+  height: 75%;
+}
+.ps5-container {
+  right: 5%;
+}
+.ps5-product {
+  max-width: 60%;
+  height: 60%;
 }
 
 /* Dual Container for Holiday & Crypto */
