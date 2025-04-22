@@ -34,6 +34,7 @@
   height: 100%;
   position: relative;
   z-index: 1000;
+  width: 40px;
 }
 
 .logo a {
