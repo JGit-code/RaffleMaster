@@ -3,25 +3,31 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileNav = document.querySelector('.mobile-nav');
     const siteHeader = document.querySelector('.site-header');
     const menuOverlay = document.querySelector('.menu-overlay');
+    const desktopNav = document.querySelector('.desktop-nav');
     
     // Check viewport width and manage menu visibility initially
     function handleResponsiveMenu() {
-        if (window.innerWidth <= 768) {
+        const windowWidth = window.innerWidth;
+        
+        if (windowWidth <= 768) {
             // Mobile viewport
-            document.querySelector('.desktop-nav').style.display = 'none';
-            menuToggle.style.display = 'block';
+            if (desktopNav) desktopNav.style.display = 'none';
+            if (menuToggle) menuToggle.style.display = 'block';
             
-            // Ensure mobile menu is hidden initially
-            if (!menuToggle.classList.contains('active')) {
-                mobileNav.classList.remove('active');
-                siteHeader.classList.remove('menu-active');
+            // Don't automatically show mobile menu, just make sure desktop is hidden
+            if (!menuToggle?.classList.contains('active')) {
+                if (mobileNav) mobileNav.classList.remove('active');
+                if (siteHeader) siteHeader.classList.remove('menu-active');
             }
         } else {
             // Desktop viewport
-            document.querySelector('.desktop-nav').style.display = 'flex';
-            menuToggle.style.display = 'none';
-            mobileNav.classList.remove('active');
-            siteHeader.classList.remove('menu-active');
+            if (desktopNav) desktopNav.style.display = 'flex';
+            if (menuToggle) menuToggle.style.display = 'none';
+            
+            // Always hide mobile menu in desktop view
+            if (mobileNav) mobileNav.classList.remove('active');
+            if (siteHeader) siteHeader.classList.remove('menu-active');
+            if (menuOverlay) menuOverlay.classList.remove('active');
             document.body.classList.remove('menu-open');
         }
     }
@@ -30,16 +36,22 @@ document.addEventListener('DOMContentLoaded', function() {
     handleResponsiveMenu();
     
     // Run on window resize
-    window.addEventListener('resize', handleResponsiveMenu);
+    let resizeTimer;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(handleResponsiveMenu, 250);
+    });
     
     // Toggle menu
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        mobileNav.classList.toggle('active');
-        siteHeader.classList.toggle('menu-active');
-        menuOverlay.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-    });
+    if (menuToggle) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            if (mobileNav) mobileNav.classList.toggle('active');
+            if (siteHeader) siteHeader.classList.toggle('menu-active');
+            if (menuOverlay) menuOverlay.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
+    }
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {

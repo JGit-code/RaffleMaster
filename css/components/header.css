@@ -331,6 +331,10 @@
     display: none !important;
   }
   
+  .mobile-nav.active {
+    display: none !important;
+  }
+  
   .menu-toggle {
     display: none !important;
   }
