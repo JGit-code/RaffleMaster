@@ -16,12 +16,36 @@ document.addEventListener('DOMContentLoaded', () => {
   // Get all buttons that should open the modal
   const openModalBtns = document.querySelectorAll('.buy-ticket-btn');
   
+  // Also select the ENTER TO WIN button from the hero slider
+  const heroEnterBtn = document.querySelector('.hero-slide.active .enter-btn');
+  
   // Variables
   let selectedQuantity = 1;
-  const ticketPrice = 5; // Default price, can be overridden
+  let ticketPrice = 5; // Default price, can be overridden
   
   // Open modal function
-  function openModal() {
+  function openModal(product = null) {
+    // Set the current product info for the cart
+    if (product) {
+      window.setCurrentModalProduct(product);
+      
+      // Update modal title and description
+      const modalTitle = modalContainer.querySelector('.modal-product-title');
+      const modalDesc = modalContainer.querySelector('.modal-product-desc');
+      
+      if (modalTitle && product.name) {
+        modalTitle.textContent = `${product.name} - Select Tickets`;
+      }
+      
+      if (modalDesc) {
+        if (product.id === 'polo') {
+          modalDesc.textContent = 'Enter this raffle to win a brand new VW Polo or R100,000 cash prize!';
+        } else {
+          modalDesc.textContent = `Ticket price: R${product.price} each`;
+        }
+      }
+    }
+    
     modalContainer.classList.add('open');
     // Prevent background scrolling
     document.body.style.overflow = 'hidden';
@@ -37,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Update total price
   function updateTotal() {
     if (ticketTotal) {
-      ticketTotal.textContent = `£${selectedQuantity * ticketPrice}`;
+      ticketTotal.textContent = `R${selectedQuantity * ticketPrice}`;
     }
   }
   
@@ -46,7 +70,43 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Event Listeners
   openModalBtns.forEach(btn => {
-    btn.addEventListener('click', openModal);
+    btn.addEventListener('click', () => openModal());
+  });
+  
+  // Add event listener for hero slider Enter to Win button
+  document.addEventListener('click', (e) => {
+    if (e.target.closest('.enter-btn') && e.target.closest('.hero-slide')) {
+      e.preventDefault();
+      
+      // Get the product data from the button's data attributes
+      const productBtn = e.target.closest('.enter-btn');
+      const productId = productBtn.dataset.product;
+      
+      // Set the product price from the slider (e.g., R15 for Polo)
+      const priceTag = e.target.closest('.hero-slide').querySelector('.price-tag-amount');
+      if (priceTag) {
+        const priceText = priceTag.textContent.trim();
+        const price = parseInt(priceText.replace(/[^\d]/g, ''));
+        if (!isNaN(price)) {
+          ticketPrice = price;
+          updateTotal();
+        }
+      }
+      
+      // Create product object based on slider content
+      const slideTitle = e.target.closest('.hero-slide').querySelector('h1').textContent;
+      const product = {
+        id: productId || 'slider-product',
+        name: slideTitle || 'Raffle Prize',
+        price: ticketPrice
+      };
+      
+      // Open the modal with this product
+      openModal(product);
+      
+      // Set this as current product for cart
+      window.setCurrentModalProduct(product);
+    }
   });
   
   // Close when clicking the close button

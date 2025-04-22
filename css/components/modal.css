@@ -546,3 +546,15 @@
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
   }
+
+.modal-product-title {
+  margin-bottom: 0.5rem;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.modal-product-desc {
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  color: var(--color-text-secondary);
+}

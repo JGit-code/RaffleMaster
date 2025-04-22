@@ -4,16 +4,16 @@
   --color-background-rgb: 15, 20, 30;
   --color-surface: hsl(220, 25%, 10%);
   --color-surface-rgb: 25, 33, 48;
-  --color-primary: hsl(45, 100%, 50%);     /* Gold */
+  --color-primary: hsl(142, 100%, 50%);     /* Gold */
   --color-primary-rgb: 255, 215, 0;
-  --color-primary-dark: hsl(45, 100%, 45%); /* Darker Gold */
+  --color-primary-dark: hsl(192, 100%, 45%); /* Darker Gold */
   --color-secondary: hsl(200, 100%, 60%);  /* Electric Blue */
   --color-secondary-rgb: 51, 171, 255;
   --color-accent: hsl(340, 95%, 65%);      /* Pink */
   --color-accent-rgb: 255, 64, 129;
   --color-success: hsl(142, 76%, 36%);     /* Green */
   --color-success-rgb: 48, 209, 88;
-  --color-warning: hsl(37, 100%, 50%);     /* Amber */
+  --color-warning: hsl(246, 100%, 50%);     /* Amber */
   --color-danger: hsl(355, 100%, 63%);     /* Red */
   --color-text: hsl(0, 0%, 95%);
   --color-text-muted: hsl(0, 0%, 70%);

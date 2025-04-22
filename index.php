@@ -22,27 +22,23 @@
                 <!-- Slide 1: Polo Car Giveaway -->
                 <div class="hero-slide active" style="background-image: url('assets/images/backgrounds/polo-bg.jpg'); background-position: center center;">
                     <div class="slide-overlay"></div>
-                    <div class="dream-car-tag">WIN A POLO</div>
+                    <div class="dream-car-tag">SIMPLE MAN</div>
                     <div class="price-tag">
-                        <div class="price-tag-text">TICKETS FROM</div>
-                        <div class="price-tag-amount">R15<span>p</span></div>
+                        <div class="price-tag-text">TICKETS</div>
+                        <div class="price-tag-amount">R15</div>
                     </div>
                     <div class="cars-container polo-container">
                         <img src="assets/images/vw-polo.jpg" alt="VW Polo" class="hero-car polo-car">
-                        <div class="prize-highlight">
-                            <span class="highlight-text">PREMIUM</span>
-                            <span class="highlight-value">MODEL</span>
-                        </div>
                     </div>
                     <div class="hero-content">
                         <h1>STAND A CHANCE TO WIN A POLO!</h1>
                         <p>Buy as many tickets as you can. The more, the merrier!</p>
-                        <a href="#polo-giveaway" class="enter-btn">ENTER TO WIN »</a>
+                        <a href="#" class="enter-btn" data-product="polo" data-toggle="modal" data-target="#ticket-modal">ENTER TO WIN »</a>
                     </div>
                     <div class="bonus-tag">
-                        <span>+</span>
-                        <strong>R10,000</strong>
-                        <span>CASH</span>
+                        <span>OR</span>
+                        <strong>R100,000</strong>
+                        <span>CASH PRIZE</span>
                     </div>
                 </div>
 
@@ -255,23 +251,24 @@
     <!-- Ticket Purchase Modal (updated version) -->
     <div class="modal-container" id="ticket-modal">
         <div class="modal">
-        <button class="modal-close">&times;</button>
-        <h2>Select Tickets</h2>
-        <div class="ticket-selector">
-            <button class="ticket-btn" data-quantity="1">1</button>
-            <button class="ticket-btn" data-quantity="5">5</button>
-            <button class="ticket-btn" data-quantity="10">10</button>
-            <button class="ticket-btn" data-quantity="20">20</button>
-            <button class="ticket-btn" data-quantity="50">50</button>
-            <div class="custom-quantity">
-            <label for="custom-ticket-amount">Custom:</label>
-            <input type="number" id="custom-ticket-amount" min="1" max="100" value="1">
+            <button class="modal-close">&times;</button>
+            <h2 class="modal-product-title">Select Tickets</h2>
+            <p class="modal-product-desc"></p>
+            <div class="ticket-selector">
+                <button class="ticket-btn" data-quantity="1">1</button>
+                <button class="ticket-btn" data-quantity="5">5</button>
+                <button class="ticket-btn" data-quantity="10">10</button>
+                <button class="ticket-btn" data-quantity="20">20</button>
+                <button class="ticket-btn" data-quantity="50">50</button>
+                <div class="custom-quantity">
+                    <label for="custom-ticket-amount">Custom:</label>
+                    <input type="number" id="custom-ticket-amount" min="1" max="100" value="1">
+                </div>
             </div>
-        </div>
-        <div class="ticket-summary">
-            <p>Total: <span class="ticket-total">£5</span></p>
-        </div>
-        <button class="cta-button add-to-cart-btn">Add to Cart</button>
+            <div class="ticket-summary">
+                <p>Total: <span class="ticket-total">R15</span></p>
+            </div>
+            <button class="cta-button add-to-cart-btn">Add to Cart</button>
         </div>
     </div>
 
