@@ -4,6 +4,28 @@ document.addEventListener('DOMContentLoaded', function() {
     const siteHeader = document.querySelector('.site-header');
     const menuOverlay = document.querySelector('.menu-overlay');
     
+    // Check viewport width and manage menu visibility initially
+    function handleResponsiveMenu() {
+        if (window.innerWidth <= 768) {
+            // Mobile viewport
+            document.querySelector('.desktop-nav').style.display = 'none';
+            menuToggle.style.display = 'block';
+        } else {
+            // Desktop viewport
+            document.querySelector('.desktop-nav').style.display = 'flex';
+            menuToggle.style.display = 'none';
+            mobileNav.classList.remove('active');
+            siteHeader.classList.remove('menu-active');
+            document.body.classList.remove('menu-open');
+        }
+    }
+    
+    // Run on page load
+    handleResponsiveMenu();
+    
+    // Run on window resize
+    window.addEventListener('resize', handleResponsiveMenu);
+    
     // Toggle menu
     menuToggle.addEventListener('click', () => {
         menuToggle.classList.toggle('active');
