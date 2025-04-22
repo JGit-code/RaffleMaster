@@ -1,0 +1,240 @@
+/* Raffles Page Styles */
+.raffles-page {
+    padding-top: 100px;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.page-header {
+    background-color: white;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.page-header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+}
+
+.sort-options {
+    position: relative;
+}
+
+.sort-select {
+    appearance: none;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5rem 2.5rem 0.5rem 1rem;
+    font-size: 0.95rem;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sort-select:hover {
+    border-color: #999;
+}
+
+.sort-select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(var(--primary-color-rgb), 0.1);
+}
+
+.sort-options::after {
+    content: '▼';
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.raffles-grid {
+    padding: 0 1rem 4rem;
+}
+
+.raffles-grid .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.raffle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.prize-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.prize-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.prize-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid #eee;
+}
+
+.prize-card h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 1rem;
+    color: #333;
+}
+
+.prize-card .price {
+    font-size: 1rem;
+    color: #666;
+    margin: 0.5rem 1rem;
+}
+
+.prize-card .countdown-timer {
+    margin: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.progress-bar-container {
+    margin: 1rem;
+    background-color: #f0f0f0;
+    border-radius: 50px;
+    height: 6px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.prize-card .cta-button {
+    display: block;
+    margin: 1rem;
+    padding: 0.8rem;
+    text-align: center;
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.prize-card .cta-button:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-1px);
+}
+
+.coming-soon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    background: linear-gradient(45deg, #f5f5f5, #e0e0e0);
+    border: 2px dashed #ccc;
+}
+
+.coming-soon-content {
+    text-align: center;
+    padding: 2rem;
+}
+
+.coming-soon h3 {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.coming-soon p {
+    color: #888;
+    margin-bottom: 1rem;
+}
+
+.notification-hint {
+    display: inline-block;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+    border-radius: 50px;
+}
+
+@media (max-width: 768px) {
+    .raffles-page {
+        padding-top: 80px;
+    }
+
+    .page-header {
+        padding: 1.5rem 0;
+    }
+
+    .page-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .raffle-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .prize-card img {
+        height: 180px;
+    }
+
+    .prize-card h3 {
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-header .container {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .sort-select {
+        width: 100%;
+    }
+
+    .raffle-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .prize-card img {
+        height: 200px;
+    }
+} 

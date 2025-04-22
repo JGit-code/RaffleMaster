@@ -79,6 +79,7 @@
   --footer-height: 300px;
   --sidebar-width: 280px;
   --grid-gap: 1.5rem;
+  --chip-color: #000000;
 }
 
 /* Utility Classes */
