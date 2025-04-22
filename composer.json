@@ -1,0 +1,10 @@
+{
+    "name": "administrator/raffle-master",
+    "authors": [
+        {
+            "name": "JGit-code",
+            "email": "jasongaud18@gmail.com"
+        }
+    ],
+    "require": {}
+}
