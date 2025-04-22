@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/components/prize-card.css">
     <link rel="stylesheet" href="/css/components/modal.css">
     <link rel="stylesheet" href="/css/components/animation.css">
+    <link rel="stylesheet" href="/css/components/hero.css">
 </head>
 <body>
     <header class="site-header">
@@ -46,52 +47,73 @@
     <main>
         <section class="hero-banner">
             <div class="hero-slider">
-                <!-- Slide 1 -->
-                <div class="hero-slide active" style="background-image: url('assets/images/background.png');">
-                    <div class="hero-text">
-                        <div class="content-wrapper">
-                            <span class="hero-tag">Limited Time Offer</span>
-                            <h1>Your Dream, <span class="accent-text shine-text">One Ticket Away</span></h1>
-                            <p>Enter to win amazing prizes!</p>
-                            <div class="hero-buttons">
-                                <a href="raffles/raffles.html" class="cta-button pulse-animation">View All Raffles</a>
-                                <a href="how-it-works.html" class="text-button">How It Works <span class="arrow">→</span></a>
-                            </div>
-                        </div>
+                <!-- Slide 1: Cars & Cash -->
+                <div class="hero-slide active" style="background-image: url('assets/images/mountain-road-background.jpg');">
+                    <div class="dream-car-tag">DREAM CAR</div>
+                    <div class="price-tag">
+                        <div class="price-tag-text">TICKETS FROM</div>
+                        <div class="price-tag-amount">R15</div>
+                    </div>
+                    <div class="cars-container">
+                        <img src="assets/images/red-sports-car.jpg" alt="Red Sports Car" class="hero-car sports-car">
+                        <img src="assets/images/red-audi.jpg" alt="Red Audi" class="hero-car audi-car">
+                        <img src="assets/images/cash-stack.png" alt="Cash Prize" class="cash-stack">
+                    </div>
+                    <div class="hero-content">
+                        <h1>Stand a chance to win a Polo!</h1>
+                        <p>This week only, R10,000 tax-free cash with 10 dream cars!</p>
+                        <a href="#" class="enter-btn">ENTER TO WIN »</a>
                     </div>
                 </div>
-                <!-- Slide 2 -->
-                <div class="hero-slide" style="background-image: url('assets/images/iphone15.jpg');">
-                    <div class="hero-text">
-                        <div class="content-wrapper">
-                            <span class="hero-tag">Tech Prize</span>
-                            <h1>iPhone 15 Pro</h1>
-                            <p>Latest Apple flagship with amazing features!</p>
-                            <div class="prize-meta">
-                                <span class="prize-tickets">487 tickets left</span>
-                            </div>
-                            <div class="hero-buttons">
-                                <a href="#iphone15" class="cta-button pulse-animation">Enter Now</a>
-                                <span class="prize-amount">Only R10 per ticket</span>
-                            </div>
-                        </div>
+
+                <!-- Slide 2: iPhone 15 Pro -->
+                <div class="hero-slide" style="background-image: url('assets/images/tech-background.jpg');">
+                    <div class="prize-tag">TECH GIVEAWAY</div>
+                    <div class="price-tag">
+                        <div class="price-tag-text">TICKETS FROM</div>
+                        <div class="price-tag-amount">R10</div>
+                    </div>
+                    <div class="product-container iphone-container">
+                        <img src="assets/images/iphone15.jpg" alt="iPhone 15 Pro" class="hero-product iphone-product">
+                    </div>
+                    <div class="hero-content">
+                        <h1>WIN THE LATEST iPHONE 15 PRO!</h1>
+                        <p>Your chance to win Apple's flagship smartphone with incredible camera and performance!</p>
+                        <a href="#iphone15" class="enter-btn">ENTER TO WIN »</a>
                     </div>
                 </div>
-                <!-- Slide 3 -->
-                <div class="hero-slide" style="background-image: url('assets/images/macbook-pro.jpg');">
-                    <div class="hero-text">
-                        <div class="content-wrapper">
-                            <span class="hero-tag">Pro Tech</span>
-                            <h1>MacBook Pro</h1>
-                            <p>Ultimate power for professionals!</p>
-                            <div class="prize-meta">
-                                <span class="prize-tickets">342 tickets left</span>
-                            </div>
-                            <div class="hero-buttons">
-                                <a href="#macbook" class="cta-button pulse-animation">Enter Now</a>
-                                <span class="prize-amount">Only R20 per ticket</span>
-                            </div>
-                        </div>
+
+                <!-- Slide 3: MacBook Pro -->
+                <div class="hero-slide" style="background-image: url('assets/images/desk-background.jpg');">
+                    <div class="prize-tag">PRO GEAR</div>
+                    <div class="price-tag">
+                        <div class="price-tag-text">TICKETS FROM</div>
+                        <div class="price-tag-amount">R20</div>
+                    </div>
+                    <div class="product-container macbook-container">
+                        <img src="assets/images/macbook-pro.jpg" alt="MacBook Pro" class="hero-product macbook-product">
+                    </div>
+                    <div class="hero-content">
+                        <h1>MACBOOK PRO GIVEAWAY!</h1>
+                        <p>Take your productivity to the next level with Apple's most powerful laptop!</p>
+                        <a href="#macbook" class="enter-btn">ENTER NOW »</a>
+                    </div>
+                </div>
+
+                <!-- Slide 4: Holiday & Crypto -->
+                <div class="hero-slide" style="background-image: url('assets/images/holiday1.jpg');">
+                    <div class="prize-tag">DUAL PRIZE</div>
+                    <div class="price-tag">
+                        <div class="price-tag-text">TICKETS FROM</div>
+                        <div class="price-tag-amount">R15</div>
+                    </div>
+                    <div class="dual-container">
+                        <div class="crypto-icon">₿</div>
+                    </div>
+                    <div class="hero-content">
+                        <h1>LUXURY HOLIDAY + CRYPTO!</h1>
+                        <p>Win a dream vacation AND R5,000 in cryptocurrency of your choice!</p>
+                        <a href="#holiday-crypto" class="enter-btn">SPIN & WIN</a> »</a>
                     </div>
                 </div>
             </div>
@@ -100,6 +122,27 @@
                 <button class="slider-prev">❮</button>
                 <div class="slider-dots"></div>
                 <button class="slider-next">❯</button>
+            </div>
+        </section>
+
+        <section class="explore-section">
+            <h2>EXPLORE OUR COMPETITIONS</h2>
+            <div class="stats-container">
+                <div class="stats-item">
+                    <div class="stats-icon">🏆</div>
+                    <div class="stats-content">
+                        <div class="stats-title">Over 9.68 million</div>
+                        <div class="stats-subtitle">winners</div>
+                    </div>
+                </div>
+                <div class="stats-divider"></div>
+                <div class="stats-item">
+                    <div class="stats-icon">🎁</div>
+                    <div class="stats-content">
+                        <div class="stats-title">Over R92.6 million</div>
+                        <div class="stats-subtitle">in prizes won</div>
+                    </div>
+                </div>
             </div>
         </section>
 
