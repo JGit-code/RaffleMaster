@@ -11,18 +11,33 @@
     <link rel="stylesheet" href="/css/components/checkout.css">
 </head>
 <body>
-    <!-- Header component -->
+    <!-- Header -->
     <header class="site-header">
         <div class="logo">
-            <a href="/">Raffle Master</a>
+            <img src="assets/images/RaffleLogo.png" alt="Raffle Master Logo">
+            <a href="index.html">Raffle Master</a>
         </div>
-        <nav class="main-nav">
+        <nav class="desktop-nav">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/raffles/raffles.html">Raffles</a></li>
-                <li><a href="/winners.html">Winners</a></li>
-                <li><a href="/how-it-works.html">How It Works</a></li>
-                <li><a href="/cart.html" class="cart-link active">Cart <span class="cart-count">0</span></a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="raffles/raffles.html" class="nav-link">Raffles</a></li>
+                <li><a href="winners.html" class="nav-link">Winners</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="cart.html" class="nav-link cart-link active">Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="raffles/raffles.html" class="nav-link">Raffles</a></li>
+                <li><a href="winners.html" class="nav-link">Winners</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="cart.html" class="nav-link cart-link active">Cart <span class="cart-count">0</span></a></li>
             </ul>
         </nav>
     </header>
@@ -135,7 +150,7 @@
                 <h4>Contact</h4>
                 <ul>
                     <li>Email: support@dreamraffles.com</li>
-                    <li>Phone: 01234 567890</li>
+                    <li>Phone: 060 895 7103</li>
                 </ul>
             </div>
         </div>
@@ -143,6 +158,7 @@
             <p>&copy; 2023 Raffle Master. All rights reserved.</p>
         </div>
     </footer>
+    <script src="/js/header.js"></script>
     <script src="/js/product-modal.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {

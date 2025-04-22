@@ -15,19 +15,30 @@
 <body>
     <header class="site-header">
         <div class="logo">
-            <a href="/">
-                <img src="assets/images/RaffleLogo.png" alt="Raffle Master Logo">
-                Raffle Master
-            </a>
+            <img src="assets/images/RaffleLogo.png" alt="Raffle Master Logo">
+            <a href="index.html">Raffle Master</a>
         </div>
-        <button class="menu-toggle" aria-label="Toggle menu">☰</button>
-        <nav class="main-nav">
+        <nav class="desktop-nav">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/raffles/raffles.html">Raffles</a></li>
-                <li><a href="/winners.html">Winners</a></li>
-                <li><a href="/how-it-works.html">How It Works</a></li>
-                <li><a href="/cart.html" class="cart-link">Cart <span class="cart-count">0</span></a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="raffles/raffles.html" class="nav-link">Raffles</a></li>
+                <li><a href="winners.html" class="nav-link">Winners</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="cart.html" class="nav-link cart-link">Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/raffles/raffles.html" class="nav-link">Raffles</a></li>
+                <li><a href="/winners.html" class="nav-link">Winners</a></li>
+                <li><a href="/how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="/cart.html" class="nav-link cart-link">Cart <span class="cart-count">0</span></a></li>
             </ul>
         </nav>
     </header>
@@ -83,23 +94,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- Slide 4 -->
-                <div class="hero-slide" style="background-image: url('assets/images/holiday1.jpg');">
-                    <div class="hero-text">
-                        <div class="content-wrapper">
-                            <span class="hero-tag">Travel Prize</span>
-                            <h1>Luxury Holiday</h1>
-                            <p>Dream vacation to paradise!</p>
-                            <div class="prize-meta">
-                                <span class="prize-tickets">250 tickets left</span>
-                            </div>
-                            <div class="hero-buttons">
-                                <a href="#holiday" class="cta-button pulse-animation">Enter Now</a>
-                                <span class="prize-amount">Only R15 per ticket</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <!-- Slider Navigation -->
             <div class="slider-nav">
@@ -116,7 +110,6 @@
                 <div class="prize-card tilt" data-product-id="iphone15" data-category="tech">
                     <img src="assets/images/iphone15.jpg" alt="iPhone 15 Pro">
                     <div class="prize-meta">
-                        <span class="prize-category">Tech</span>
                         <span class="prize-tickets">487 tickets left</span>
                     </div>
                     <h3>iPhone 15 Pro</h3>
@@ -132,7 +125,6 @@
                 <div class="prize-card tilt" data-product-id="macbook" data-category="tech">
                     <img src="assets/images/macbook-pro.jpg" alt="MacBook Pro">
                     <div class="prize-meta">
-                        <span class="prize-category">Tech</span>
                         <span class="prize-tickets">342 tickets left</span>
                     </div>
                     <h3>MacBook Pro</h3>
@@ -148,7 +140,6 @@
                 <div class="prize-card tilt" data-product-id="holiday" data-category="travel">
                     <img src="assets/images/holiday1.jpg" alt="Luxury Holiday">
                     <div class="prize-meta">
-                        <span class="prize-category">Travel</span>
                         <span class="prize-tickets">250 tickets left</span>
                     </div>
                     <h3>Luxury Holiday</h3>
@@ -281,6 +272,7 @@
     <script src="/js/product-modal.js"></script>
     <script src="/js/product-tracking.js"></script>
     <script src="/js/hero-slider.js"></script>
+    <script src="/js/header.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -295,7 +287,9 @@
             // Mobile menu functionality
             const menuToggle = document.querySelector('.menu-toggle');
             const mainNav = document.querySelector('.main-nav');
+            const header = document.querySelector('.site-header');
             
+            // Toggle menu
             menuToggle.addEventListener('click', () => {
                 mainNav.classList.toggle('active');
                 document.body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : '';
@@ -306,6 +300,15 @@
                 if (!mainNav.contains(e.target) && !menuToggle.contains(e.target) && mainNav.classList.contains('active')) {
                     mainNav.classList.remove('active');
                     document.body.style.overflow = '';
+                }
+            });
+
+            // Header scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
                 }
             });
 

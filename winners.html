@@ -11,18 +11,33 @@
     <link rel="stylesheet" href="/css/components/animation.css">
 </head>
 <body>
-    <!-- Header component -->
+    <!-- Header -->
     <header class="site-header">
         <div class="logo">
-            <a href="/">Raffle Master</a>
+            <img src="assets/images/RaffleLogo.png" alt="Raffle Master Logo">
+            <a href="index.html">Raffle Master</a>
         </div>
-        <nav class="main-nav">
+        <nav class="desktop-nav">
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/raffles/raffles.html">Raffles</a></li>
-                <li><a href="/winners.html" class="active">Winners</a></li>
-                <li><a href="/how-it-works.html">How It Works</a></li>
-                <li><a href="/cart.html" class="cart-link">Cart <span class="cart-count">0</span></a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="raffles/raffles.html" class="nav-link">Raffles</a></li>
+                <li><a href="winners.html" class="nav-link active">Winners</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="cart.html" class="nav-link cart-link">Cart <span class="cart-count">0</span></a></li>
+            </ul>
+        </nav>
+        <button class="menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="raffles/raffles.html" class="nav-link">Raffles</a></li>
+                <li><a href="winners.html" class="nav-link active">Winners</a></li>
+                <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+                <li><a href="cart.html" class="nav-link cart-link">Cart <span class="cart-count">0</span></a></li>
             </ul>
         </nav>
     </header>
@@ -87,22 +102,6 @@
                             </div>
                         </div>
                     </div>
-                    
-                    <!-- Add more winner items here -->
-                    <div class="timeline-item">
-                        <div class="timeline-date">January 2023</div>
-                        <div class="timeline-content">
-                            <div class="winner-card">
-                                <img src="/assets/images/winners/winner1.jpg" alt="Emma P.">
-                                <div class="winner-info">
-                                    <h3>Emma P. from Bristol</h3>
-                                    <h4>iPhone 14 Pro</h4>
-                                    <p>"I only bought one ticket! I couldn't believe my luck when I got the email saying I'd won."</p>
-                                    <div class="ticket-number">Winning ticket: #23941</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -121,15 +120,6 @@
                             <div class="play-button"></div>
                         </div>
                         <h3>John's Tesla Win</h3>
-                    </div>
-                    
-                    <!-- Video Testimonial -->
-                    <div class="video-card">
-                        <div class="video-thumbnail">
-                            <img src="/assets/images/winners/winner2.jpg" alt="Sarah's MacBook Story">
-                            <div class="play-button"></div>
-                        </div>
-                        <h3>Sarah's MacBook Story</h3>
                     </div>
                 </div>
             </div>
@@ -182,6 +172,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="/js/header.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Video thumbnail click handlers
