@@ -195,10 +195,10 @@
   top: 80px;
   left: 0;
   right: 0;
-  bottom: 0;
   background-color: rgba(0, 0, 0, 0.98);
   padding: 1rem;
   z-index: 998;
+  width: 100%;
 }
 
 .mobile-nav.active {

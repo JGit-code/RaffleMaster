@@ -33,7 +33,7 @@
                     </div>
                     <div class="hero-content">
                         <h1>Stand a chance to win a Polo!</h1>
-                        <p>This week only, £10,000 tax-free cash with 10 dream cars!</p>
+                        <p>Buy as many tickets as you can. The more, the merrier!</p>
                         <a href="#" class="enter-btn">ENTER TO WIN »</a>
                     </div>
                 </div>

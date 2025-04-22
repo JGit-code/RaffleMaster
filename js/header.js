@@ -10,6 +10,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Mobile viewport
             document.querySelector('.desktop-nav').style.display = 'none';
             menuToggle.style.display = 'block';
+            
+            // Ensure mobile menu is hidden initially
+            if (!menuToggle.classList.contains('active')) {
+                mobileNav.classList.remove('active');
+                siteHeader.classList.remove('menu-active');
+            }
         } else {
             // Desktop viewport
             document.querySelector('.desktop-nav').style.display = 'flex';
@@ -37,7 +43,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Close menu when clicking outside
     document.addEventListener('click', (e) => {
-        if (!mobileNav.contains(e.target) && !menuToggle.contains(e.target) && mobileNav.classList.contains('active')) {
+        if (mobileNav && menuToggle && 
+            !mobileNav.contains(e.target) && 
+            !menuToggle.contains(e.target) && 
+            mobileNav.classList.contains('active')) {
             menuToggle.classList.remove('active');
             mobileNav.classList.remove('active');
             siteHeader.classList.remove('menu-active');
@@ -47,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Close menu when clicking on a link
-    const mobileNavLinks = mobileNav.querySelectorAll('.nav-link');
+    const mobileNavLinks = mobileNav ? mobileNav.querySelectorAll('.nav-link') : [];
     mobileNavLinks.forEach(link => {
         link.addEventListener('click', () => {
             menuToggle.classList.remove('active');
