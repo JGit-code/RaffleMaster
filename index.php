@@ -19,22 +19,30 @@
     <main>
         <section class="hero-banner">
             <div class="hero-slider">
-                <!-- Slide 1: Cars & Cash -->
-                <div class="hero-slide active" style="background-image: url('assets/images/mountain-road-background.jpg');">
-                    <div class="dream-car-tag">DREAM CAR</div>
+                <!-- Slide 1: Polo Car Giveaway -->
+                <div class="hero-slide active" style="background-image: url('assets/images/backgrounds/polo-bg.jpg'); background-position: center center;">
+                    <div class="slide-overlay"></div>
+                    <div class="dream-car-tag">WIN A POLO</div>
                     <div class="price-tag">
                         <div class="price-tag-text">TICKETS FROM</div>
                         <div class="price-tag-amount">R15<span>p</span></div>
                     </div>
-                    <div class="cars-container">
-                        <img src="assets/images/red-sports-car.jpg" alt="Red Sports Car" class="hero-car sports-car">
-                        <img src="assets/images/red-audi.jpg" alt="Red Audi" class="hero-car audi-car">
-                        <img src="assets/images/cash-stack.png" alt="Cash Prize" class="cash-stack">
+                    <div class="cars-container polo-container">
+                        <img src="assets/images/vw-polo.jpg" alt="VW Polo" class="hero-car polo-car">
+                        <div class="prize-highlight">
+                            <span class="highlight-text">PREMIUM</span>
+                            <span class="highlight-value">MODEL</span>
+                        </div>
                     </div>
                     <div class="hero-content">
-                        <h1>Stand a chance to win a Polo!</h1>
+                        <h1>STAND A CHANCE TO WIN A POLO!</h1>
                         <p>Buy as many tickets as you can. The more, the merrier!</p>
-                        <a href="#" class="enter-btn">ENTER TO WIN »</a>
+                        <a href="#polo-giveaway" class="enter-btn">ENTER TO WIN »</a>
+                    </div>
+                    <div class="bonus-tag">
+                        <span>+</span>
+                        <strong>R10,000</strong>
+                        <span>CASH</span>
                     </div>
                 </div>
 
