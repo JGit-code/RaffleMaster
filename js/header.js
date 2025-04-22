@@ -1,72 +1,42 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
-    const mobileNav = document.querySelector('.mobile-nav');
+    const mobileMenuContainer = document.querySelector('.mobile-menu-container');
+    const mobileMenuClose = document.querySelector('.mobile-menu-close');
     const siteHeader = document.querySelector('.site-header');
-    const menuOverlay = document.querySelector('.menu-overlay');
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav .nav-link');
     
-    // Check viewport width and manage menu visibility initially
-    function handleResponsiveMenu() {
-        if (window.innerWidth <= 768) {
-            // Mobile viewport
-            document.querySelector('.desktop-nav').style.display = 'none';
-            menuToggle.style.display = 'block';
-            
-            // Ensure mobile menu is hidden initially
-            if (!menuToggle.classList.contains('active')) {
-                mobileNav.classList.remove('active');
-                siteHeader.classList.remove('menu-active');
-            }
-        } else {
-            // Desktop viewport
-            document.querySelector('.desktop-nav').style.display = 'flex';
-            menuToggle.style.display = 'none';
-            mobileNav.classList.remove('active');
-            siteHeader.classList.remove('menu-active');
-            document.body.classList.remove('menu-open');
-        }
-    }
-    
-    // Run on page load
-    handleResponsiveMenu();
-    
-    // Run on window resize
-    window.addEventListener('resize', handleResponsiveMenu);
-    
-    // Toggle menu
+    // Open mobile menu
     menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        mobileNav.classList.toggle('active');
-        siteHeader.classList.toggle('menu-active');
-        menuOverlay.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
+        mobileMenuContainer.classList.add('active');
+        document.body.classList.add('menu-open');
+        document.body.style.overflow = 'hidden';
     });
-
-    // Close menu when clicking outside
-    document.addEventListener('click', (e) => {
-        if (mobileNav && menuToggle && 
-            !mobileNav.contains(e.target) && 
-            !menuToggle.contains(e.target) && 
-            mobileNav.classList.contains('active')) {
-            menuToggle.classList.remove('active');
-            mobileNav.classList.remove('active');
-            siteHeader.classList.remove('menu-active');
-            menuOverlay.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        }
+    
+    // Close mobile menu
+    mobileMenuClose.addEventListener('click', () => {
+        mobileMenuContainer.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        document.body.style.overflow = '';
     });
-
-    // Close menu when clicking on a link
-    const mobileNavLinks = mobileNav ? mobileNav.querySelectorAll('.nav-link') : [];
+    
+    // Close mobile menu when clicking on navigation links
     mobileNavLinks.forEach(link => {
         link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            mobileNav.classList.remove('active');
-            siteHeader.classList.remove('menu-active');
-            menuOverlay.classList.remove('active');
+            mobileMenuContainer.classList.remove('active');
             document.body.classList.remove('menu-open');
+            document.body.style.overflow = '';
         });
     });
-
+    
+    // Handle escape key to close menu
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && mobileMenuContainer.classList.contains('active')) {
+            mobileMenuContainer.classList.remove('active');
+            document.body.classList.remove('menu-open');
+            document.body.style.overflow = '';
+        }
+    });
+    
     // Header scroll effect
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
