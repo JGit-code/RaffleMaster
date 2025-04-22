@@ -43,6 +43,7 @@
   font-size: 1.3rem;
   height: 100%;
   padding: 0 1rem;
+  width: 100%;
 }
 
 .logo img {
@@ -60,7 +61,7 @@
 }
 
 .logo span {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 /* Desktop Navigation */
@@ -188,124 +189,95 @@
   display: none !important;
 }
 
-/* Mobile Menu */
-.mobile-menu-container {
+/* Mobile Navigation */
+.mobile-nav {
+  display: none;
   position: fixed;
-  top: 0;
+  top: 80px;
   left: 0;
   right: 0;
-  bottom: 0;
-  background-color: #a1d6e2; /* Baby blue background */
-  z-index: 1001;
-  display: none;
-  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.98);
+  padding: 1rem;
+  z-index: 998;
+  width: 100%;
+}
+
+.mobile-nav.active {
+  display: block;
+  background-color: #a1d6e2; /* Baby blue color */
+  position: absolute;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: auto;
+  max-height: calc(100vh - 80px);
   overflow-y: auto;
-}
-
-.mobile-menu-container.active {
-  display: flex;
-}
-
-.mobile-menu-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-.mobile-menu-header .logo {
-  display: flex;
-  align-items: center;
-}
-
-.mobile-menu-header .logo img {
-  height: 40px;
-  margin-right: 12px;
-}
-
-.mobile-menu-header .logo span {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: #333;
-}
-
-.mobile-menu-close {
-  background: none;
-  border: none;
-  padding: 0.5rem;
-  cursor: pointer;
-  color: #333;
-}
-
-.mobile-menu-close svg {
-  width: 30px;
-  height: 30px;
-}
-
-.mobile-nav {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  background-color: #a1d6e2;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .mobile-nav ul {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .mobile-nav li {
+  opacity: 0;
+  transform: translateY(8px);
+  animation: slideIn 0.3s ease forwards;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
+.mobile-nav li:last-child {
+  border-bottom: none;
+}
+
 .mobile-nav .nav-link {
-  display: block;
-  padding: 1.2rem 1.5rem;
+  display: flex;
+  align-items: center;
   color: #333;
   text-decoration: none;
-  font-size: 1.3rem;
-  font-weight: 400;
-  transition: background-color 0.2s;
+  font-size: 1.1rem;
+  padding: 1rem;
+  transition: all 0.2s ease;
 }
 
 .mobile-nav .nav-link:hover,
-.mobile-nav .nav-link:active {
+.mobile-nav .nav-link.active {
+  color: #000;
   background-color: rgba(0, 0, 0, 0.05);
 }
 
-.mobile-cart-container {
-  margin-top: auto;
-  padding: 1.5rem;
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.mobile-cart-link {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: white;
+.mobile-nav li:nth-child(1) { animation-delay: 0.1s; }
+.mobile-nav li:nth-child(2) { animation-delay: 0.15s; }
+.mobile-nav li:nth-child(3) { animation-delay: 0.2s; }
+.mobile-nav li:nth-child(4) { animation-delay: 0.25s; }
+.mobile-nav li:nth-child(5) { animation-delay: 0.3s; }
+
+.mobile-nav .cart-link {
+  margin-top: 1rem;
+  background-color: #fff;
   color: #333;
-  text-decoration: none;
-  padding: 1rem;
-  border-radius: 40px;
-  font-size: 1.2rem;
-  font-weight: 500;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  justify-content: center;
+  gap: 0.5rem;
 }
 
-.cart-count {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background-color: #ff6b8b;
-  color: white;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border-radius: 50%;
-  width: 26px;
-  height: 26px;
-  margin-left: 0.5rem;
+.mobile-nav .cart-link:hover {
+  background-color: rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -329,6 +301,14 @@
   .menu-toggle {
     display: block;
   }
+  
+  .mobile-nav.active {
+    top: 60px;
+  }
+  
+  body.menu-open {
+    overflow: hidden;
+  }
 }
 
 @media (max-width: 480px) {
@@ -347,7 +327,7 @@
 }
 
 @media (min-width: 769px) {
-  .mobile-menu-container {
+  .mobile-nav {
     display: none !important;
   }
   
@@ -370,6 +350,21 @@ body {
 
 main {
   flex: 1;
+}
+
+.cart-count {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-accent);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  position: relative;
+  top: -2px;
 }
 
 html {
