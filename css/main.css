@@ -10,6 +10,8 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -23,10 +25,12 @@ body {
   overflow-x: hidden;
   margin: 0;
   padding-top: 80px; /* Add spacing for fixed header */
+  width: 100%;
+  min-height: 100vh;
 }
 
 img {
-  max-width: 40px;
+  max-width: 100%;
   height: auto;
   display: block;
 }
@@ -70,6 +74,7 @@ p {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  position: relative;
 }
 
 main {
@@ -78,6 +83,8 @@ main {
   margin: 0;
   position: relative;
   z-index: 1;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 section {
@@ -85,6 +92,7 @@ section {
   padding: 3rem 1.5rem;
   position: relative;
   z-index: 1;
+  width: 100%;
 }
 
 /* Grid System */
@@ -94,10 +102,11 @@ section {
 .steps-grid {
   display: grid;
   gap: 1.5rem;
+  width: 100%;
 }
 
 .raffle-grid {
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }
 
 .trust-grid {
@@ -175,6 +184,22 @@ section {
 }
 
 /* Media Queries */
+@media (max-width: 1200px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .raffle-grid {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .raffle-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}
+
 @media (max-width: 768px) {
   body {
     padding-top: 60px;
@@ -190,6 +215,11 @@ section {
 
   .raffle-details .raffle-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .raffle-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
   }
 
   .steps-grid {
@@ -226,6 +256,20 @@ section {
   }
 }
 
+@media (max-width: 576px) {
+  .raffle-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  section {
+    padding: 1.5rem 0.75rem;
+  }
+  
+  .container {
+    padding: 0 0.75rem;
+  }
+}
+
 @media (max-width: 480px) {
   .hero-banner {
     padding: 2rem 0;
@@ -239,20 +283,20 @@ section {
     font-size: 1.75rem;
   }
 
-  .raffle-grid,
   .trust-grid,
   .footer-grid {
     grid-template-columns: 1fr;
   }
 }
 
-/* Hero Banner */
+/* Hero Banner - REMOVED THIS BLOCK */
 .hero-banner {
   position: relative;
   height: 600px;
   margin-bottom: 3rem;
   overflow: hidden;
 }
+/**/
 
 .hero-slider {
   position: relative;
@@ -283,7 +327,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.4) 100%);
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 100%);
   z-index: 1;
 }
 

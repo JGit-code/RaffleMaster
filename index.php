@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raffle Master - Win Amazing Prizes</title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/root.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/components/header.css">
-    <link rel="stylesheet" href="css/components/footer.css">
-    <link rel="stylesheet" href="css/components/prize-card.css">
-    <link rel="stylesheet" href="css/components/modal.css">
-    <link rel="stylesheet" href="css/components/animation.css">
-    <link rel="stylesheet" href="css/components/hero.css">
+    <link rel="stylesheet" href="css/reset.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/root.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/main.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/components/header.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/components/footer.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/components/prize-card.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/components/modal.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/components/animation.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="css/components/hero.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // Force a complete page refresh by adding a unique timestamp
+        window.onload = function() {
+            if (!window.location.search.includes('refresh=')) {
+                window.location.href = window.location.href + (window.location.search ? '&' : '?') + 'refresh=' + Date.now();
+            }
+        };
+    </script>
 </head>
 <body>
     <?php include 'header.php'; ?>
@@ -20,20 +29,20 @@
         <section class="hero-banner">
             <div class="hero-slider">
                 <!-- Slide 1: Polo Car Giveaway -->
-                <div class="hero-slide active" style="background-image: url('assets/images/backgrounds/polo-bg.jpg'); background-position: center center;">
-                    <div class="slide-overlay"></div>
-                    <div class="dream-car-tag">SIMPLE MAN</div>
+                <div class="hero-slide active" style="background-image: url('assets/images/backgrounds/polo-bg.jpg');">
+                    <div class="slide-overlay"></div> <!-- Overlay restored -->
+                    <div class="dream-car-tag">POPULAR</div> 
                     <div class="price-tag">
-                        <div class="price-tag-text">TICKETS</div>
-                        <div class="price-tag-amount">R15</div>
+                        <div class="price-tag-text">ENTRY</div>
+                        <div class="price-tag-amount">R50</div>
                     </div>
                     <div class="cars-container polo-container">
                         <img src="assets/images/vw-polo.jpg" alt="VW Polo" class="hero-car polo-car">
                     </div>
                     <div class="hero-content">
-                        <h1>STAND A CHANCE TO WIN A POLO!</h1>
-                        <p>Buy as many tickets as you can. The more, the merrier!</p>
-                        <a href="#" class="enter-btn" data-product="polo" data-toggle="modal" data-target="#ticket-modal">ENTER TO WIN »</a>
+                        <h1>WIN A VOLKSWAGEN POLO</h1>
+                        <p>Your chance to drive away in this fantastic car!</p>
+                        <a href="entry.php" class="enter-btn">ENTER NOW</a>
                     </div>
                     <div class="bonus-tag">
                         <span>OR</span>
@@ -45,7 +54,7 @@
                 <!-- Slide 2: iPhone 15 Pro -->
                 <div class="hero-slide" style="background-image: url('assets/images/tech-background.jpg');">
                     <div class="slide-overlay"></div>
-                    <div class="dream-car-tag">TECH GIVEAWAY</div>
+                    <div class="dream-car-tag">TECH</div>
                     <div class="price-tag">
                         <div class="price-tag-text">TICKETS</div>
                         <div class="price-tag-amount">R10</div>
@@ -54,14 +63,9 @@
                         <img src="assets/images/iphone15.jpg" alt="iPhone 15 Pro" class="hero-car iphone-car">
                     </div>
                     <div class="hero-content">
-                        <h1>WIN THE LATEST iPHONE 15 PRO!</h1>
-                        <p>Your chance to win Apple's flagship smartphone with incredible camera and performance!</p>
+                        <h1>WIN iPHONE 15 PRO</h1>
+                        <p>Get Apple's flagship smartphone with incredible camera and performance!</p>
                         <a href="#" class="enter-btn" data-product="iphone15" data-toggle="modal" data-target="#ticket-modal">ENTER TO WIN »</a>
-                    </div>
-                    <div class="bonus-tag">
-                        <span>OR</span>
-                        <strong>R15,000</strong>
-                        <span>CASH PRIZE</span>
                     </div>
                 </div>
 
@@ -77,33 +81,13 @@
                         <img src="assets/images/macbook-pro.jpg" alt="MacBook Pro" class="hero-car macbook-car">
                     </div>
                     <div class="hero-content">
-                        <h1>MACBOOK PRO GIVEAWAY!</h1>
-                        <p>Take your productivity to the next level with Apple's most powerful laptop!</p>
+                        <h1>MACBOOK PRO GIVEAWAY</h1>
+                        <p>Take your productivity to the next level with Apple's powerful laptop!</p>
                         <a href="#" class="enter-btn" data-product="macbook" data-toggle="modal" data-target="#ticket-modal">ENTER NOW »</a>
-                    </div>
-                    <div class="bonus-tag">
-                        <span>OR</span>
-                        <strong>R25,000</strong>
-                        <span>CASH PRIZE</span>
                     </div>
                 </div>
 
-                <!-- Slide 4: Holiday & Crypto -->
-                <div class="hero-slide" style="background-image: url('assets/images/holiday1.jpg');">
-                    <div class="slide-overlay"></div>
-                    <div class="dream-car-tag">FAMILY TRIP</div>
-                    <div class="price-tag">
-                        <div class="price-tag-text">TICKETS</div>
-                        <div class="price-tag-amount">R15</div>
-                    </div>
-                    <div class="hero-content">
-                        <h1>LUXURY HOLIDAY</h1>
-                        <p>Win a dream vacation</p>
-                        <a href="#" class="enter-btn" data-product="holiday-crypto" data-toggle="modal" data-target="#ticket-modal">ENTER TO WIN »</a>
-                    </div>
-                </div>
-                
-                <!-- Slide 5: PlayStation 5 Bundle -->
+                <!-- Slide 4: PlayStation 5 Bundle -->
                 <div class="hero-slide" style="background-image: url('assets/images/gaming-background.jpg');">
                     <div class="slide-overlay"></div>
                     <div class="dream-car-tag">GAMING BUNDLE</div>
@@ -115,45 +99,19 @@
                         <img src="assets/images/playstation5.jpg" alt="PlayStation 5" class="hero-car ps5-car">
                     </div>
                     <div class="hero-content">
-                        <h1>WIN A PS5 ULTIMATE BUNDLE!</h1>
-                        <p>PlayStation 5 console, extra controller, headset, and 5 games of your choice!</p>
+                        <h1>WIN A PS5 BUNDLE</h1>
+                        <p>PS5 console, extra controller, headset, and 5 games of your choice!</p>
                         <a href="#" class="enter-btn" data-product="gaming" data-toggle="modal" data-target="#ticket-modal">ENTER TO WIN »</a>
                     </div>
-                    <div class="bonus-tag">
-                        <span>OR</span>
-                        <strong>R10,000</strong>
-                        <span>CASH PRIZE</span>
-                    </div>
                 </div>
-                
-                <!-- Slide 6: Home Renovation Package -->
-                <div class="hero-slide" style="background-image: url('assets/images/home-background.jpg');">
-                    <div class="slide-overlay"></div>
-                    <div class="dream-car-tag">HOME MAKEOVER</div>
-                    <div class="price-tag">
-                        <div class="price-tag-text">TICKETS</div>
-                        <div class="price-tag-amount">R25</div>
-                    </div>
-                    <div class="cars-container home-container">
-                        <img src="assets/images/home-renovation.jpg" alt="Home Renovation" class="hero-car home-car">
-                    </div>
-                    <div class="hero-content">
-                        <h1>£25,000 HOME RENOVATION PACKAGE!</h1>
-                        <p>Transform your living space with this incredible home makeover prize!</p>
-                        <a href="#" class="enter-btn" data-product="home-makeover" data-toggle="modal" data-target="#ticket-modal">ENTER TO WIN »</a>
-                    </div>
-                    <div class="bonus-tag">
-                        <span>OR</span>
-                        <strong>R25,000</strong>
-                        <span>CASH PRIZE</span>
-                    </div>
-                </div>
-            </div>
+            </div> 
             <!-- Slider Navigation -->
             <div class="slider-nav">
-                <button class="slider-prev">❮</button>
-                <div class="slider-dots"></div>
-                <button class="slider-next">❯</button>
+                <button class="slider-prev"><i class="fas fa-chevron-left"></i></button>
+                <div class="slider-dots">
+                    <!-- Dots will be generated by JavaScript -->
+                </div>
+                <button class="slider-next"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
 
@@ -163,16 +121,16 @@
                 <div class="stats-item">
                     <div class="stats-icon">🏆</div>
                     <div class="stats-content">
-                        <div class="stats-title">Over 9.68 million</div>
-                        <div class="stats-subtitle">winners</div>
+                        <div class="stats-title">Over 1000 Users</div>
+                        <div class="stats-subtitle">Trusted by many</div>
                     </div>
                 </div>
                 <div class="stats-divider"></div>
                 <div class="stats-item">
                     <div class="stats-icon">🎁</div>
                     <div class="stats-content">
-                        <div class="stats-title">Over £92.6 million</div>
-                        <div class="stats-subtitle">in prizes won</div>
+                        <div class="stats-title">Over 1000 Users</div>
+                        <div class="stats-subtitle">Trusted by many</div>
                     </div>
                 </div>
             </div>
@@ -309,13 +267,13 @@
         </div>
     </div>
 
-    <script src="js/countdown.js"></script>
-    <script src="js/modal.js"></script>
-    <script src="js/carousel.js"></script>
-    <script src="js/product-modal.js"></script>
-    <script src="js/product-tracking.js"></script>
-    <script src="js/hero-slider.js"></script>
-    <script src="js/header.js"></script>
+    <script src="js/countdown.js?v=<?php echo time(); ?>"></script>
+    <script src="js/modal.js?v=<?php echo time(); ?>"></script>
+    <script src="js/carousel.js?v=<?php echo time(); ?>"></script>
+    <script src="js/product-modal.js?v=<?php echo time(); ?>"></script>
+    <script src="js/product-tracking.js?v=<?php echo time(); ?>"></script>
+    <script src="js/hero-slider.js?v=<?php echo time(); ?>"></script>
+    <script src="js/header.js?v=<?php echo time(); ?>"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -360,4 +318,5 @@
     </script>
 </body>
 </html>
+
 

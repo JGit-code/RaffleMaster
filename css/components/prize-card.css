@@ -8,6 +8,7 @@
   flex-direction: column;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: var(--shadow-md);
+  height: 100%;
 }
 
 .prize-card:hover {
@@ -17,14 +18,16 @@
 
 .prize-card__image {
   position: relative;
-  height: 220px;
+  height: 250px;
   overflow: hidden;
+  width: 100%;
 }
 
 .prize-card__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.5s ease;
 }
 
@@ -124,9 +127,35 @@
   z-index: 1;
 }
 
+/* Legacy support for old prize card structure */
+.prize-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  object-position: center;
+  border-bottom: 1px solid #eee;
+}
+
+.prize-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 1rem;
+  color: #333;
+}
+
+.prize-card .price {
+  font-size: 1rem;
+  color: #666;
+  margin: 0.5rem 1rem;
+}
+
 @media (max-width: 768px) {
   .prize-card__image {
-    height: 180px;
+    height: 200px;
+  }
+  
+  .prize-card img {
+    height: 200px;
   }
   
   .prize-card__content {
@@ -139,5 +168,15 @@
   
   .prize-card__price {
     font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .prize-card__image {
+    height: 180px;
+  }
+  
+  .prize-card img {
+    height: 180px;
   }
 }

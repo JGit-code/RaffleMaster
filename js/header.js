@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.querySelector('.menu-toggle');
     const mobileNav = document.querySelector('.mobile-nav');
     const siteHeader = document.querySelector('.site-header');
-    const menuOverlay = document.querySelector('.menu-overlay');
-    const desktopNav = document.querySelector('.desktop-nav');
     
     // Check viewport width and manage menu visibility initially
     function handleResponsiveMenu() {
@@ -11,23 +9,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         if (windowWidth <= 768) {
             // Mobile viewport
-            if (desktopNav) desktopNav.style.display = 'none';
             if (menuToggle) menuToggle.style.display = 'block';
             
-            // Don't automatically show mobile menu, just make sure desktop is hidden
+            // Don't automatically show mobile menu
             if (!menuToggle?.classList.contains('active')) {
                 if (mobileNav) mobileNav.classList.remove('active');
-                if (siteHeader) siteHeader.classList.remove('menu-active');
             }
         } else {
             // Desktop viewport
-            if (desktopNav) desktopNav.style.display = 'flex';
             if (menuToggle) menuToggle.style.display = 'none';
             
             // Always hide mobile menu in desktop view
             if (mobileNav) mobileNav.classList.remove('active');
-            if (siteHeader) siteHeader.classList.remove('menu-active');
-            if (menuOverlay) menuOverlay.classList.remove('active');
             document.body.classList.remove('menu-open');
         }
     }
@@ -47,8 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
         menuToggle.addEventListener('click', () => {
             menuToggle.classList.toggle('active');
             if (mobileNav) mobileNav.classList.toggle('active');
-            if (siteHeader) siteHeader.classList.toggle('menu-active');
-            if (menuOverlay) menuOverlay.classList.toggle('active');
             document.body.classList.toggle('menu-open');
         });
     }
@@ -61,8 +52,6 @@ document.addEventListener('DOMContentLoaded', function() {
             mobileNav.classList.contains('active')) {
             menuToggle.classList.remove('active');
             mobileNav.classList.remove('active');
-            siteHeader.classList.remove('menu-active');
-            menuOverlay.classList.remove('active');
             document.body.classList.remove('menu-open');
         }
     });
@@ -73,15 +62,13 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', () => {
             menuToggle.classList.remove('active');
             mobileNav.classList.remove('active');
-            siteHeader.classList.remove('menu-active');
-            menuOverlay.classList.remove('active');
             document.body.classList.remove('menu-open');
         });
     });
 
     // Header scroll effect
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        if (window.scrollY > 20) {
             siteHeader.classList.add('scrolled');
         } else {
             siteHeader.classList.remove('scrolled');
